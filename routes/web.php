@@ -11,11 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+Auth::routes();
+// Auth::routes(['verify' => true]);
+
+Route::get('/', 'HomeController@welcome');
+Route::get('/home', 'HomeController@index');
+
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('sliders', 'SliderController');
 });
 
 
-Auth::routes(['verify' => true]);
+Route::resource('programmAndServices', 'ProgrammAndServiceController');
 
-Route::get('/home', 'HomeController@index')->middleware('verified');
+Route::resource('contactuses', 'ContactUsController');
