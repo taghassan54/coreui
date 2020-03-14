@@ -9,10 +9,11 @@
         <tbody>
         @foreach($sliders as $slider)
             <tr>
-                <td>{{ $slider->title }}</td>
+                <td class="table-image">{{ $slider->title }}</td>
             <td>{{ $slider->text }}</td>
             <td>{{ $slider->type }}</td>
-            <td><img src="{{ $slider->getFirstMediaUrl() }}" width="150" alt="" srcset=""></td>
+            <td><img src="{{ $slider->getFirstMediaUrl() }}" class="table-image" width="150" alt="" srcset=""></td>
+
                 <td>
                     {!! Form::open(['route' => ['sliders.destroy', $slider->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

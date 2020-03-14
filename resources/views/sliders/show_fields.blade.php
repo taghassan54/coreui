@@ -12,14 +12,13 @@
 <!-- Text Field -->
 <div class="form-group">
     {!! Form::label('text', 'Image:') !!}
-    <p><img src="{{ $slider->getFirstMediaUrl() }}" width="100%" alt="" srcset=""></p>
+    <p><img src="{{ $slider->getFirstMediaUrl() }}"  width="100%" alt="" srcset=""></p>
 </div>
+
 
 <!-- Type Field -->
 <div class="form-group">
     {!! Form::label('type', 'Type:') !!}
     <p>{{ $slider->type }}</p>
 </div>
-
-
 

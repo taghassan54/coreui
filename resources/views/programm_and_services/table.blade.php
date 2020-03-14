@@ -8,9 +8,9 @@
         <tbody>
         @foreach($programmAndServices as $programmAndService)
             <tr>
-                <td>{{ $programmAndService->title }}</td>
+                <td class="table-image">{{ $programmAndService->title }}</td>
             <td>{{ $programmAndService->description }}</td>
-            <td><img src="{{ $programmAndService->getFirstMediaUrl() }}" width="150" alt="" srcset=""></td>
+            <td><img src="{{ $programmAndService->getFirstMediaUrl() }}" class="table-image" width="150" alt="" srcset=""></td>
                 <td>
                     {!! Form::open(['route' => ['programmAndServices.destroy', $programmAndService->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

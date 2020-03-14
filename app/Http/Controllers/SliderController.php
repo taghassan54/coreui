@@ -29,7 +29,7 @@ class SliderController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $sliders = $this->sliderRepository->all();
+        $sliders = $this->sliderRepository->paginate(5);
 
         return view('sliders.index')
             ->with('sliders', $sliders);
@@ -57,11 +57,12 @@ class SliderController extends AppBaseController
         $input = $request->all();
 
         $slider = $this->sliderRepository->create($input);
-      if($request->hasFile('file'))
+        if($request->hasFile('file'))
         $slider
            ->addMedia($request->file)
            ->toMediaCollection();
         Flash::success('Slider saved successfully.');
+
         return redirect(route('sliders.index'));
     }
 
@@ -123,15 +124,14 @@ class SliderController extends AppBaseController
             return redirect(route('sliders.index'));
         }
         if($request->hasFile('file')){
-        foreach ($slider->getMedia() as $media) {
-            $media->delete();
-
+            foreach ($slider->getMedia() as $media) {
+                $media->delete();
+    
+            }
+            $slider
+            ->addMedia($request->file)
+            ->toMediaCollection();
         }
-        $slider
-        ->addMedia($request->file)
-        ->toMediaCollection();
-    }
-
         $slider = $this->sliderRepository->update($request->all(), $id);
 
         Flash::success('Slider updated successfully.');

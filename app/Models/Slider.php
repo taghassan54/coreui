@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Slider
  * @package App\Models
- * @version March 12, 2020, 10:56 pm UTC
+ * @version March 14, 2020, 7:52 am UTC
  *
  * @property string title
  * @property string text
@@ -19,9 +19,8 @@ class Slider extends Model implements HasMedia
 {
     use SoftDeletes;
     use HasMediaTrait;
-
     public $table = 'sliders';
-
+    
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -54,10 +53,10 @@ class Slider extends Model implements HasMedia
      * @var array
      */
     public static $rules = [
-        'title' => 'required',
-        'text' => 'required',
-        'type' => 'required'
+        
     ];
 
-
+    public function getSliderTypeAttribute(){
+               $this->type==1?"bottom slider":"top slider";
+               } 
 }

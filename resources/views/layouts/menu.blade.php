@@ -10,9 +10,34 @@
         <span>P A S</span>
     </a>
 </li>
+
+<li class="nav-item {{ Request::is('posts*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('posts.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Posts</span>
+    </a>
+</li>
+<li class="nav-item {{ Request::is('events*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('events.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Events</span>
+    </a>
+</li>
+<li class="nav-item {{ Request::is('blogCategories*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('blogCategories.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Blog Categories</span>
+    </a>
+</li>
 <li class="nav-item {{ Request::is('contactuses*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('contactuses.index') }}">
         <i class="nav-icon icon-cursor"></i>
         <span>Contact us</span>
     </a>
 </li>
+{{-- <li class="nav-item {{ Request::is('blogPostTags*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('blogPostTags.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Blog Post Tags</span>
+    </a>
+</li> --}}

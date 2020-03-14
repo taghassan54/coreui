@@ -29,7 +29,7 @@ class ProgrammAndServiceController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $programmAndServices = $this->programmAndServiceRepository->all();
+        $programmAndServices = $this->programmAndServiceRepository->paginate(5);
 
         return view('programm_and_services.index')
             ->with('programmAndServices', $programmAndServices);

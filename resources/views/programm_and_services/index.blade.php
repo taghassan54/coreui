@@ -17,9 +17,11 @@
                          </div>
                          <div class="card-body">
                              @include('programm_and_services.table')
-                              <div class="pull-right mr-3">
-
-                              </div>
+                             <div class="pull-right mr-3">
+                                     
+                                @include('coreui-templates::common.paginate', ['records' => $programmAndServices])
+                        
+                                                      </div>
                          </div>
                      </div>
                   </div>

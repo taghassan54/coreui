@@ -14,7 +14,7 @@
 
 
 Auth::routes();
-// Auth::routes(['verify' => true]);
+Auth::routes(['verify' => true]);
 
 Route::get('/', 'HomeController@welcome');
 Route::get('/home', 'HomeController@index');
@@ -28,3 +28,11 @@ Route::group(['middleware' => ['auth']], function () {
 Route::resource('programmAndServices', 'ProgrammAndServiceController');
 
 Route::resource('contactuses', 'ContactUsController');
+
+Route::resource('posts', 'PostController');
+
+Route::resource('events', 'EventController');
+
+Route::resource('blogCategories', 'BlogCategoryController');
+
+Route::resource('blogPostTags', 'BlogPostTagController');

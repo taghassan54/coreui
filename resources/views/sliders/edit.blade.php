@@ -18,7 +18,7 @@
                               <strong>Edit Slider</strong>
                           </div>
                           <div class="card-body">
-                              {!! Form::model($slider, ['route' => ['sliders.update', $slider->id], 'method' => 'patch','enctype'=>"multipart/form-data"]) !!}
+                            {!! Form::model($slider, ['route' => ['sliders.update', $slider->id], 'method' => 'patch','enctype'=>"multipart/form-data"]) !!}
 
                               @include('sliders.fields')
 
