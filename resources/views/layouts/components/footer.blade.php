@@ -1,6 +1,24 @@
 
 
 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        /* {{--  position: absolute;  --}} */
+        top: 0;
+        bottom: 0;
+        height: 500px;
+        width: 100%;
+      }
+    </style>
+
     <section class="cid-rRfiDlx6et" id="footer2-8">
 
 
@@ -14,27 +32,31 @@
 
                         <strong>Address</strong>
                         <br>
-                        <br>1234 Street Name
-                        <br>City, AA 99999
+                        <br>{{ $footer?$footer->address:'' }}
+
                         <br>
                         <br>
                         <br><strong>Contacts</strong>
                         <br>
-                        <br>Email: support@mobirise.com
-                        <br>Phone: +1 (0) 000 0000 001
-                        <br>Fax: +1 (0) 000 0000 002
+                        <br>Email: {{ $footer?$footer->email:'' }}
+                        <br>Phone: {{ $footer?$footer->phone:'' }}
+                        <br>Fax: {{ $footer?$footer->fax:'' }}
                     </p>
                 </div>
-                <div class="col-12 col-md-3 mbr-fonts-style display-7">
+            {{--     <div class="col-12 col-md-3 mbr-fonts-style display-7">
                     <p class="mbr-text">
                         <strong>Links</strong>
                         <br>
                         <br>Privacy Policy<br>Terms of Use<br>Staff Links<br>
                         <br>&nbsp;<br>
                         <br>&nbsp;</p>
-                </div>
+                </div> --}}
                 <div class="col-12 col-md-6">
-                    <div class="google-map"><iframe frameborder="0" style="border:0" src="/https://www.google.com/maps/embed/v1/place?key=AIzaSyCx3d07zxHPLvkFBLlAR3Ng8a9wsAsGoJ8&amp;q=place_id:ChIJn6wOs6lZwokRLKy1iqRcoKw" allowfullscreen=""></iframe></div>
+
+                    <div class="form-group">
+                        <div id='map'></div>
+                    </div>
+
                 </div>
             </div>
             <div class="footer-lower">
@@ -86,3 +108,24 @@
         </div>
     </section>
 
+
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1Ijoic3VzaGFtIiwiYSI6ImNqanAxMHkybDdiemIza3I1Zmp6cHNyZmEifQ.WjMlTsgbvIVtQdmY_AHF_g';
+
+    @if (isset($footer))
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/light-v10',
+        center: [{{ $footer?$footer->lang:'' }},{{ $footer?$footer->lat:'' }}],
+        zoom: 15
+      });
+      const marker = new mapboxgl.Marker();
+      @if($footer->lang != 0 && $footer->lat !=0)
+      marker.setLngLat([{{ $footer?$footer->lang:'' }},{{ $footer?$footer->lat:'' }}]).addTo(map);
+      @endif
+
+    @else
+
+    @endif
+        </script>

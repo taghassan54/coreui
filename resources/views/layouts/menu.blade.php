@@ -41,3 +41,15 @@
         <span>Blog Post Tags</span>
     </a>
 </li> --}}
+<li class="nav-item {{ Request::is('footers*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('footers.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Footers</span>
+    </a>
+</li>
+<li class="nav-item {{ Request::is('galleries*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('galleries.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Galleries</span>
+    </a>
+</li>

@@ -1,3 +1,7 @@
+@section('css')
+<link rel="stylesheet" href="/assets/gallery/style.css">
+@endsection
+
 <section class="mbr-section content5 cid-rRwgJmT0ds mbr-parallax-background" id="content5-2i">
 
 
@@ -17,4 +21,12 @@
     </div>
 </section>
 
-@include('layouts.components.Gallery.gallery')
+@include('layouts.components.Gallery.media')
+
+@section('js')
+<script src="/assets/theme/js/script.js"></script>
+<script src="/assets/gallery/player.min.js"></script>
+<script src="/assets/gallery/script.js"></script>
+<script src="/assets/slidervideo/script.js"></script>
+<script src="/assets/formoid/formoid.min.js"></script>
+@endsection

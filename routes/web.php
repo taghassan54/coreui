@@ -13,10 +13,10 @@
 
 
 
-Auth::routes();
-Auth::routes(['verify' => true]);
+Auth::routes(['register' => false]);
 
 Route::get('/', 'HomeController@welcome');
+Route::get('/gallery', 'HomeController@gallery');
 Route::get('/home', 'HomeController@index');
 
 
@@ -36,3 +36,9 @@ Route::resource('events', 'EventController');
 Route::resource('blogCategories', 'BlogCategoryController');
 
 Route::resource('blogPostTags', 'BlogPostTagController');
+
+
+Route::resource('footers', 'FooterController');
+
+
+Route::resource('galleries', 'GalleryController');

@@ -28,16 +28,16 @@
 
 
 
-
+                @forelse ($posts as $post)
                 <div class="carousel-item">
                     <div class="media-container-row flex-md-row flex-column-reverse text-left align-items-center">
                         <div class="col-lg-1"></div>
                         <div class="col-lg-4 col-md-6 text-element">
                             <div class="title-content">
-                                <h2 class="mbr-title mbr-bold mbr-fonts-style display-5">Managing sales made easy</h2>
-                                <p class="mbr-text mbr-fonts-style display-7">2/Deb/2020</p>
-                                <p class="card__title mbr-fonts-style display-7">Mobirise contains components and complex blocks that can be easily integrated into any design. Mobirise contains components and complex blocks that can be easily integrated into any design.</p>
-                                <p class="card__text mbr-fonts-style display-4">Read More ></p>
+                                <h2 class="mbr-title mbr-bold mbr-fonts-style display-5"> {{$post->title}} </h2>
+                                <p class="mbr-text mbr-fonts-style display-7">{{$post->created_at	}}</p>
+                                <p class="card__title mbr-fonts-style display-7"> {!! $post->summary !!} .</p>
+                               <a href="#"> <p class="card__text mbr-fonts-style display-4">Read More </p></a>
 
                             </div>
 
@@ -45,37 +45,24 @@
                         <div class="col-md-1"></div>
                         <div class="col-lg-6 col-md-5">
                             <div class="img-wrap" style="height:100%; width: 100%;">
-                                <img src="/assets/images/3.jpg" alt="" title="img title">
+                                <img src="{{$post->getFirstMediaUrl()}}" class="table-image" alt="" title="img title">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="media-container-row flex-md-row flex-column-reverse text-left align-items-center">
-                        <div class="col-lg-1"></div>
-                        <div class="col-lg-4 col-md-6 text-element">
-                            <div class="title-content">
-                                <h2 class="mbr-title mbr-bold mbr-fonts-style display-5">Managing sales made easy</h2>
-                                <p class="mbr-text mbr-fonts-style display-7">2/Deb/2020</p>
-                                <p class="card__title mbr-fonts-style display-7">Mobirise contains components and complex blocks that can be easily integrated into any design. Mobirise contains components and complex blocks that can be easily integrated into any design.</p>
-                                <p class="card__text mbr-fonts-style display-4">Read More ></p>
+                @empty
 
-                            </div>
+                @endforelse
 
-                        </div>
-                        <div class="col-md-1"></div>
-                        <div class="col-lg-6 col-md-5">
-                            <div class="img-wrap" style="height:100%; width: 100%;">
-                                <img src="/assets/images/27.jpg" alt="" title="img title">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
 
             <div class="carousel-indicators">
-                <li data-slide-to="0" class="active"></li>
-                <li data-slide-to="1"></li>
+                @forelse ($posts as $post)
+                <li data-slide-to="{{$loop->iteration-1}}" class="{{ $loop->first?'active':'' }} "></li>
+                @empty
+
+                @endforelse
 
 
 

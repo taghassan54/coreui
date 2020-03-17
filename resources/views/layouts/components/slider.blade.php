@@ -6,7 +6,7 @@
         <div class="mbr-slider slide carousel" data-pause="true" data-keyboard="false" data-ride="false" data-interval="false">
             <ol class="carousel-indicators">
                 @forelse ($sliders->where('type',0) as $slider)
-                <li data-app-prevent-settings="" data-target="#slider1-19" class="active" data-slide-to="0"></li>
+                <li data-app-prevent-settings="" data-target="#slider1-19" class="active" data-slide-to="{{$loop->iteration-1}}"></li>
                 @empty
 
                 @endforelse

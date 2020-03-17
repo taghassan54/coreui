@@ -30,6 +30,7 @@
 
 
     <link rel="stylesheet" href="/assets/wowslider-init/boundary/style.css">
+    @yield('css')
 </head>
 <body>
     @include('layouts.components.menu')
@@ -63,6 +64,7 @@
 
 <input name="animation" type="hidden">
 <script async src="/assets/wowslider-effect/bubbles/script.js"></script>
+@yield('js')
 </body>
 
 </html>

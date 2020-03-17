@@ -13,7 +13,13 @@
 <!-- Date Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('date', 'Date:') !!}
-    {!! Form::date('date', null, ['class' => 'form-control','id'=>'date']) !!}
+@if (isset($event))
+
+{!! Form::date('date', $event->date, ['class' => 'form-control','id'=>'date']) !!}
+@else
+{!! Form::date('date', null, ['class' => 'form-control','id'=>'date']) !!}
+
+@endif
 </div>
 
 <!-- Type Field -->

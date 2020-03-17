@@ -34,7 +34,6 @@ class PostController extends AppBaseController
     public function index(Request $request)
     {
         $posts = $this->postRepository->paginate(5);
-        // $posts=  $posts->sortBy('status',true);
         $categories= $this->categories->all();
          return view('posts.index')
             ->with('posts', $posts);
