@@ -32,7 +32,8 @@ class Gallery extends Model implements HasMedia
 
     public $fillable = [
         'title',
-        'type'
+        'type',
+        'youtube'
     ];
 
     /**
@@ -43,6 +44,7 @@ class Gallery extends Model implements HasMedia
     protected $casts = [
         'id' => 'integer',
         'title' => 'string',
+        'youtube' => 'string',
         'type' => 'string'
     ];
 
@@ -53,7 +55,6 @@ class Gallery extends Model implements HasMedia
      */
     public static $rules = [
         'title' => 'required',
-        'type' => 'required'
     ];
 
 

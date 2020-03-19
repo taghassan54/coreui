@@ -3,6 +3,7 @@
         <thead>
             <th>Title</th>
         <th>Description</th>
+        <th>Media</th>
             <th colspan="3">Action</th>
         </thead>
         <tbody>

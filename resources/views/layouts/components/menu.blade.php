@@ -5,7 +5,7 @@
     <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
         <div class="navbar-brand">
             <span class="navbar-logo">
-                <a href="#">
+                <a href="/">
                     <img src="/assets/images/fsqo-logo-380x123.png" alt="" title="" style="height: 3.8rem;">
                 </a>
             </span>
@@ -31,16 +31,16 @@
                         About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="#">
+                    <a class="nav-link link text-white display-4" href="/fsqo-club">
                         FSQO Community</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="#">
+                    <a class="nav-link link text-white display-4" href="/blogs">
                         Blogs</a>
                 </li>
                 <li class="nav-item"><a class="nav-link link text-white display-4" href="#">
                         News and Events</a></li>
-                <li class="nav-item"><a class="nav-link link text-white display-4" href="#">
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="/gallery">
                         Gallery</a></li>
                 <li class="nav-item"><a class="nav-link link text-white display-4" href="#">
                         Library</a></li>

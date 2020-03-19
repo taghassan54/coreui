@@ -62,6 +62,7 @@ class PostController extends AppBaseController
     {
         $input = $request->all();
 
+        $input['auther_id']=@auth()->user()->id;
 
         $post = $this->postRepository->create($input);
         if($request->hasFile('file')){
@@ -96,6 +97,19 @@ class PostController extends AppBaseController
         }
 
         return view('posts.show')->with('post', $post);
+    }
+    public function singlepost($id)
+    {
+
+        $post = $this->postRepository->find(decrypt($id));
+
+        if (empty($post)) {
+            Flash::error('Post not found');
+
+            return redirect(route('posts.index'));
+        }
+
+        return view('singlepost')->with('post', $post);
     }
 
     /**

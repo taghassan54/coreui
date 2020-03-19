@@ -62,9 +62,13 @@ class GalleryController extends AppBaseController
         $gallery
            ->addMedia($request->file)
            ->toMediaCollection();
-        }else{
-            $gallery->type="vid";
         }
+
+        if($request->youtube)
+        $gallery->type="video";
+
+        $gallery->save();
+
         Flash::success('Gallery saved successfully.');
 
         return redirect(route('galleries.index'));
@@ -127,14 +131,20 @@ class GalleryController extends AppBaseController
 
             return redirect(route('galleries.index'));
         }
-         if($request->hasFile('file')){
-        $gallery
-           ->addMedia($request->file)
-           ->toMediaCollection();
-        $gallery = $this->galleryRepository->update($request->all(), $id);
-         }else{
+        if($gallery->type=='img')
+        if($request->hasFile('file')){
+            foreach ($gallery->getMedia() as $media) {
+                $media->delete();
 
-         }
+            }
+            $gallery
+            ->addMedia($request->file)
+            ->toMediaCollection();
+        }
+
+        $gallery = $this->galleryRepository->update($request->all(), $id);
+
+
         Flash::success('Gallery updated successfully.');
 
         return redirect(route('galleries.index'));

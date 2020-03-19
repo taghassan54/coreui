@@ -4,6 +4,7 @@
             <th>Title</th>
         <th>Text</th>
         <th>Type</th>
+        <th>Images</th>
             <th colspan="3">Action</th>
         </thead>
         <tbody>

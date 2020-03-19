@@ -9,8 +9,8 @@
         <tbody>
         @foreach($contactuses as $contactUs)
             <tr>
-                <td>{{ $contactUs->name }}</td>
-            <td>{{ $contactUs->email }}</td>
+                <td class="table-image">{{ $contactUs->name }}</td>
+            <td class="table-image">{{ $contactUs->email }}</td>
             <td>{{ $contactUs->message }}</td>
                 <td>
                     {!! Form::open(['route' => ['contactuses.destroy', $contactUs->id], 'method' => 'delete']) !!}

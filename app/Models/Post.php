@@ -6,6 +6,8 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Laravelista\Comments\Commentable;
+use Spatie\Permission\Traits\HasRoles;
 /**
  * Class Post
  * @package App\Models
@@ -25,7 +27,8 @@ class Post extends Model implements HasMedia
 {
     use SoftDeletes;
     use HasMediaTrait;
-
+    use Commentable;
+    use HasRoles;
     public $table = 'blog_posts';
 
     const CREATED_AT = 'created_at';
@@ -45,6 +48,7 @@ class Post extends Model implements HasMedia
         'content',
         'status',
         'comments',
+        'auther_id',
         'featured'
     ];
 
@@ -55,6 +59,7 @@ class Post extends Model implements HasMedia
      */
     protected $casts = [
         'id' => 'integer',
+        'auther_id' => 'integer',
         'category_id' => 'boolean',
         'title' => 'string',
         'slug' => 'string',
@@ -74,7 +79,6 @@ class Post extends Model implements HasMedia
     public static $rules = [
         'category_id' => 'required',
         'title' => 'required',
-
         'summary' => 'required',
         'content' => 'required',
         'status' => 'required',
@@ -93,6 +97,9 @@ class Post extends Model implements HasMedia
     }
     public function getShowStatusAttribute(){
         return $this->status;
+    }
+    public function getAutherAttribute(){
+        return $this->auther_id;
     }
 
 }

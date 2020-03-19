@@ -36,8 +36,8 @@
                             <div class="title-content">
                                 <h2 class="mbr-title mbr-bold mbr-fonts-style display-5"> {{$post->title}} </h2>
                                 <p class="mbr-text mbr-fonts-style display-7">{{$post->created_at	}}</p>
-                                <p class="card__title mbr-fonts-style display-7"> {!! $post->summary !!} .</p>
-                               <a href="#"> <p class="card__text mbr-fonts-style display-4">Read More </p></a>
+                                <p class="card__title mbr-fonts-style display-7"> {!! $post->summary !!} </p>
+                               <a href="/singlepost/{{ encrypt($post->id) }}"> <p class="card__text mbr-fonts-style display-4">Read More </p></a>
 
                             </div>
 

@@ -8,6 +8,9 @@ use App\Repositories\ProgrammAndServiceRepository;
 use App\Repositories\FooterRepository;
 use App\Models\Footer;
 use App\Models\Post;
+use App\Models\Gallery;
+use App\Models\FrequentlyAskedQuestion;
+
 class HomeController extends Controller
 {
 
@@ -27,7 +30,7 @@ class HomeController extends Controller
         $this->sliderRepository = $sliderRepo;
         $this->programmAndServiceRepository = $programmAndServiceRepo;
         $this->footer = Footer::first();
-        $this->posts = Post::where('status','publish')->orderBy('id','DESC')->take(5)->get();
+        $this->posts = Post::where('status','publish')->orderBy('id','DESC')->get();
 
     }
 
@@ -40,11 +43,10 @@ class HomeController extends Controller
      */
     public function welcome()
     {
-        $posts= $this->posts;
+        $posts= $this->posts->take(5);
          $sliders = $this->sliderRepository->all();
          $pas = $this->programmAndServiceRepository->all([],0,6);
-        $footer=$this->footer;
-        return view('welcome',compact('sliders','pas','footer','posts'));
+        return view('welcome',compact('sliders','pas','posts'));
     }
     /**
      * Show the application dashboard.
@@ -53,11 +55,20 @@ class HomeController extends Controller
      */
     public function gallery()
     {
+        $galleries=Gallery::all();
+        return view('gallery',compact('galleries'));
+    }
+    public function club()
+    {
+        $posts= $this->posts->take(2);
+        $faq= FrequentlyAskedQuestion::all();
+        return view('club',compact('posts','faq'));
+    }
+    public function blogs()
+    {
         $posts= $this->posts;
-         $sliders = $this->sliderRepository->all();
-         $pas = $this->programmAndServiceRepository->all([],0,6);
-        $footer=$this->footer;
-        return view('gallery',compact('sliders','pas','footer','posts'));
+
+        return view('blogs',compact('posts'));
     }
     public function index()
     {
