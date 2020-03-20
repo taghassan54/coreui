@@ -10,7 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+Route::get('per',function(){
+ /*    $permission = Permission::create(['name' => 'create user']);
+    $permission = Permission::create(['name' => 'edit user']);
+    $permission = Permission::create(['name' => 'delete user']);
+    $permission = Permission::create(['name' => 'accept user']); */
+});
 
 
 Auth::routes(['register' => false]);
@@ -90,7 +97,13 @@ Route::resource('news', 'NewsController');
 
 Route::resource('users', 'UserController')->middleware('auth');
 
+
 });
 
 
 
+
+
+Route::resource('permissions', 'PermissionController');
+
+Route::resource('roles', 'RoleController');
