@@ -9,10 +9,10 @@
         </thead>
         <tbody>
         @foreach($sliders as $slider)
-            <tr>
+            <tr class="table-image" >
                 <td class="table-image">{{ $slider->title }}</td>
-            <td>{{ $slider->text }}</td>
-            <td>{{ $slider->type }}</td>
+            <td class="table-image" >{{ $slider->text }}</td>
+            <td>{{ $slider->slider_type }}</td>
             <td><img src="{{ $slider->getFirstMediaUrl() }}" class="table-image" width="150" alt="" srcset=""></td>
 
                 <td>

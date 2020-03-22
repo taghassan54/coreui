@@ -6,6 +6,7 @@ use App\Http\Requests\CreateRoleRequest;
 use App\Http\Requests\UpdateRoleRequest;
 use App\Repositories\RoleRepository;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Permission;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
@@ -18,6 +19,7 @@ class RoleController extends AppBaseController
     public function __construct(RoleRepository $roleRepo)
     {
         $this->roleRepository = $roleRepo;
+        view()->share(['Permissions'=>Permission::all()]);
     }
 
     /**
@@ -56,7 +58,9 @@ class RoleController extends AppBaseController
     {
         $input = $request->all();
 
+
         $role = $this->roleRepository->create($input);
+        $role->syncPermissions($request->Permissions);
 
         Flash::success('Role saved successfully.');
 

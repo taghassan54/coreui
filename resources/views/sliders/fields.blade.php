@@ -19,7 +19,7 @@
 
 <!-- Type Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('type', 'Type:') !!}
+    {!! Form::label('type', 'bottom slider :') !!}
     <label class="checkbox-inline">
         {!! Form::hidden('type', 0) !!}
         {!! Form::checkbox('type', '1', null) !!}

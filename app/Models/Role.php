@@ -52,7 +52,6 @@ class Role  extends \Spatie\Permission\Models\Role
      */
     public static $rules = [
         'name' => 'required',
-        'guard_name' => 'required'
     ];
 
 }

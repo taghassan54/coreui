@@ -13,10 +13,17 @@
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 Route::get('per',function(){
- /*    $permission = Permission::create(['name' => 'create user']);
-    $permission = Permission::create(['name' => 'edit user']);
-    $permission = Permission::create(['name' => 'delete user']);
-    $permission = Permission::create(['name' => 'accept user']); */
+/*     $permission = Permission::create(['name' => 'All Content']);
+    $permission = Permission::create(['name' => 'Gallery content']);
+    $permission = Permission::create(['name' => 'Settings']);
+    $permission = Permission::create(['name' => 'Our Partners content']);
+    $permission = Permission::create(['name' => 'FSQO Community content']);
+    $permission = Permission::create(['name' => 'Blogs content']);
+    $permission = Permission::create(['name' => 'News & Events content']);
+    $permission = Permission::create(['name' => 'Library & Publications content']);
+    $permission = Permission::create(['name' => 'About Us content']); */
+ /*    $permission = Permission::create(['name' => '']); */
+
 });
 
 

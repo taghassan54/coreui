@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Models;
-use Spatie\MediaLibrary\HasMedia\HasMedia;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 /**
  * Class Slider
@@ -20,19 +21,16 @@ class Slider extends Model implements HasMedia
     use SoftDeletes;
     use HasMediaTrait;
     public $table = 'sliders';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
-
     protected $dates = ['deleted_at'];
-
-
 
     public $fillable = [
         'title',
         'text',
-        'type'
+        'type',
     ];
 
     /**
@@ -44,7 +42,7 @@ class Slider extends Model implements HasMedia
         'id' => 'integer',
         'title' => 'string',
         'text' => 'string',
-        'type' => 'boolean'
+        'type' => 'boolean',
     ];
 
     /**
@@ -53,10 +51,11 @@ class Slider extends Model implements HasMedia
      * @var array
      */
     public static $rules = [
-        
+
     ];
 
-    public function getSliderTypeAttribute(){
-               $this->type==1?"bottom slider":"top slider";
-               } 
+    public function getSliderTypeAttribute()
+    {
+       return $this->type == 1 ? "bottom slider" : "top slider";
+    }
 }
