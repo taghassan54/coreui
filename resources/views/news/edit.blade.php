@@ -18,7 +18,7 @@
                               <strong>Edit News</strong>
                           </div>
                           <div class="card-body">
-                              {!! Form::model($news, ['route' => ['news.update', $news->id], 'method' => 'patch']) !!}
+                              {!! Form::model($news, ['route' => ['news.update', $news->id], 'method' => 'patch','enctype'=>"multipart/form-data"]) !!}
 
                               @include('news.fields')
 

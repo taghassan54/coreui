@@ -1,30 +1,29 @@
 
-<section class="mbr-section info1 cid-rRSJapEqmX" id="info1-47">
+
+
+ <section class="extForm cid-rRfjmIhpdW mbr-parallax-background" id="extForm7-d">
 
 
 
 
     <div class="container">
+        <div class="row main-row justify-content-center">
 
-        <br>
+            <div class="col-sm-10 col-lg-10 col-md-10 text-block">
+                <div class="content-panel">
+                    <h2 class="mbr-section-title mbr-fonts-style align-left mbr-white pb-2 display-2">
+                        Join Us Now</h2>
+                    <p class="content-block mbr-fonts-style align-left m-0 display-7">
+                        Fill this Form and be a member of the team . Fill this Form and be a member of the team . Fill this Form and be a member of the team . Fill this Form and be a member of the team .
 
-        <div class="row justify-content-center content-row">
-            <div class="media-container-column title col-12 col-lg-7 col-md-6">
-                <h3 class="mbr-section-subtitle align-left mbr-light pb-3 mbr-fonts-style display-5">
-                    Want to Help us ???
-                </h3>
-                <h2 class="align-left mbr-bold mbr-fonts-style display-2">
-                    Join Us or Donate</h2>
-            </div>
-            <div class="media-container-column col-12 col-lg-3 col-md-4">
-                <div class="mbr-section-btn align-right py-4">
+                    </p>
 
-                    <a class="btn btn-primary display-4" href="#">DONATE</a></div>
+                    <div class="col-md-12 input-group-btn">
+                        <a href="/individual"><button type="submit" class="btn btn-form btn-primary display-4">Individual</button></a>
+                        <button type="submit" class="btn btn-form btn-primary display-4">Corporate</button>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <br>
     </div>
 </section>
-
-

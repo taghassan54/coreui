@@ -9,7 +9,7 @@
 @include('layouts.components.blogs')
 @include('layouts.components.contact_us')
 
-{{-- @include('layouts.components.donate') --}}
+
 @include('layouts.components.slider2')
 
 

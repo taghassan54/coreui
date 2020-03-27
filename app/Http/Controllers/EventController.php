@@ -88,6 +88,24 @@ class EventController extends AppBaseController
 
         return view('events.show')->with('event', $event);
     }
+    /**
+     * Display the specified Event.
+     *
+     * @param int $id
+     *
+     * @return Response
+     */
+    public function single_event ($id)
+    {
+        $event = $this->eventRepository->find($id);
+
+        if (empty($event)) {
+            Flash::error('Event not found');
+            return  back();
+        }
+
+        return view('single-event')->with('event', $event);
+    }
 
     /**
      * Show the form for editing the specified Event.

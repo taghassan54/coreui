@@ -11,10 +11,10 @@
                 <h2 class="align-center pb-3 mbr-fonts-style display-2">
                     @lang('Our Programs and Services')</h2>
                 <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-5">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et vero asperiores dolorem placeat blanditiis eligendi iure laborum, eum ratione ullam dolore at assumenda ad inventore alias.
+                    {{ $settings->where('key','Our Programs and Services')->first()?$settings->where('key','Our Programs and Services')->first()->value:'' }}
                 </h3>
                 <div class="mbr-section-btn title-btn align-center">
-                    <a class="btn btn-primary-outline display-4" href="#">@lang('homepage.VIEW ALL')</a>
+                    {{-- <a class="btn btn-primary-outline display-4" href="#">@lang('homepage.VIEW ALL')</a> --}}
                 </div>
             </div>
 

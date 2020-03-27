@@ -10,9 +10,3 @@
     <p>{{ $news->text }}</p>
 </div>
 
-<!-- Date Field -->
-<div class="form-group">
-    {!! Form::label('date', 'Date:') !!}
-    <p>{{ $news->date }}</p>
-</div>
-

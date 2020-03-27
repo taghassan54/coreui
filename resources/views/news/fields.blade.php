@@ -9,27 +9,11 @@
     {!! Form::label('text', 'Text:') !!}
     {!! Form::textarea('text', null, ['class' => 'form-control']) !!}
 </div>
-
-<!-- Date Field -->
+<!-- Type Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('date', 'Date:') !!}
-    {!! Form::text('date', null, ['class' => 'form-control','id'=>'date']) !!}
+    {!! Form::label('type', 'Image :') !!}
+    {!! Form::file('file[]', ['class' => 'form-control','multiple'=>true]) !!}
 </div>
-
-@push('scripts')
-   <script type="text/javascript">
-           $('#date').datetimepicker({
-               format: 'YYYY-MM-DD HH:mm:ss',
-               useCurrent: true,
-               icons: {
-                   up: "icon-arrow-up-circle icons font-2xl",
-                   down: "icon-arrow-down-circle icons font-2xl"
-               },
-               sideBySide: true
-           })
-       </script>
-@endpush
-
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">

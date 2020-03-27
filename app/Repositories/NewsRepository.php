@@ -8,7 +8,7 @@ use App\Repositories\BaseRepository;
 /**
  * Class NewsRepository
  * @package App\Repositories
- * @version March 19, 2020, 2:50 pm UTC
+ * @version March 26, 2020, 1:09 am UTC
 */
 
 class NewsRepository extends BaseRepository
@@ -18,8 +18,7 @@ class NewsRepository extends BaseRepository
      */
     protected $fieldSearchable = [
         'title',
-        'text',
-        'date'
+        'text'
     ];
 
     /**

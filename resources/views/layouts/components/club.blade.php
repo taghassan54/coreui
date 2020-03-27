@@ -41,8 +41,10 @@
                         <div class="text-wrap align-left">
 
                             <h2 class="mbr-section-title align-left py-4 mbr-semibold mbr-white mbr-fonts-style display-2">Blogs</h2>
-                            <p class="mbr-text mbr-black align-left mbr-regular mbr-light mbr-fonts-style display-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim quis mi eu tristique. Cras et massa erat. Quisque tempus, dolor sit amet ultrices mattis, lectus tellus mattis eros, at eleifend est tortor at eros. Fusce
-                                convallis consequat tortor quis blandit.<br><br><strong>Read More blogs &gt;</strong></p>
+                            <p class="mbr-text mbr-black align-left mbr-regular mbr-light mbr-fonts-style display-5">
+                                {{ $settings->where('key','FSQO CLUB')->first()?$settings->where('key','FSQO CLUB')->first()->value:'' }}
+                                <br><br>
+                                <a href="/blogs"><strong>Read More blogs &gt;</strong></a></p>
                         </div>
                     </div>
                 </div>
@@ -54,7 +56,7 @@
                         </div>
                         <div class="card-box">
                             <h4 class="card-title pb-2 align-left mbr-white mbr-fonts-style display-5">{{ $post->title }}</h4>
-                            <p class="mbr-text align-left mbr-regular mbr- mbr-fonts-style display-4">By Adam Steven <br>{!! $post->created_at !!}<br><br>{!! $post->summary !!}</p>
+                            <p class="mbr-text align-left mbr-regular mbr- mbr-fonts-style display-4">By {{ $post->auther }} <br>{!! $post->created_at !!}<br><br>{!! $post->summary !!}</p>
                         </div>
                         <a href="/singlepost/{{ encrypt($post->id) }}"><span class="mbr-iconfont icon mobi-mbri-right mobi-mbri" style="color: rgb(255, 255, 255); fill: rgb(255, 255, 255);"></span></a>
                     </div>

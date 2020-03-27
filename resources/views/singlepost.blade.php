@@ -27,7 +27,7 @@
 
 
     <div class="main container">
-        <h2 class="mbr-section-title pb-3 mbr-fonts-style mbr-bold align-left display-2">The Role of the FSQO in the modern history&nbsp;</h2>
+        <h2 class="mbr-section-title pb-3 mbr-fonts-style mbr-bold align-left display-2">&nbsp;</h2>
         <div class="row">
             <div class="first-col col-md-6">
                 {!! $post->summary !!}

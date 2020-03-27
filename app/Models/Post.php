@@ -91,6 +91,12 @@ class Post extends Model implements HasMedia
     {
         return $this->belongsTo(BlogCategory::class,'category_id');
     }
+    public function User()
+    {
+        return $this->belongsTo(\App\User::class,'auther_id');
+    }
+
+
 
     public function getCategoryNameAttribute(){
         return $this->Category?$this->Category->name:"no Category ";
@@ -99,7 +105,7 @@ class Post extends Model implements HasMedia
         return $this->status;
     }
     public function getAutherAttribute(){
-        return $this->auther_id;
+        return $this->User?$this->User->name:'unknown';
     }
 
 }

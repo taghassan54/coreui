@@ -39,7 +39,7 @@
 
     @yield('content')
 
-
+    @include('layouts.components.donate')
 @include('layouts.components.footer')
 <script src="/assets/web/assets/jquery/jquery.min.js"></script>
 <script src="/assets/popper/popper.min.js"></script>

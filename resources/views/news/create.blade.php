@@ -18,7 +18,7 @@
                                 <strong>Create News</strong>
                             </div>
                             <div class="card-body">
-                                {!! Form::open(['route' => 'news.store']) !!}
+                                {!! Form::open(['route' => 'news.store','enctype'=>"multipart/form-data"]) !!}
 
                                    @include('news.fields')
 

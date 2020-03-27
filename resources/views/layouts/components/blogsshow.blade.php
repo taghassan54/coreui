@@ -32,25 +32,24 @@
         <div class="row row-content justify-content-center">
 
 
+            @forelse ($posts as $post)
 
-
-            <div class="card py-4 col-md-12">
-                <div class="card-wrapper">
+            <div class="card py-4 col-md-12 " >
+                <div class="card-wrapper" style="padding:10px">
                     <div class="card-img">
-                        <img src="assets/images/mbr-666x444.jpg" title="" alt="">
+                        <img src="{{ $post->getFirstMediaUrl() }}" title="" alt="">
                     </div>
                     <div class="card-box">
                         <div class="text-box">
-                            <h4 class="card-title mbr-fonts-style mbr-normal display-5">ENOC celebrates 44th UAE National Day</h4>
+                            <h4 class="card-title mbr-fonts-style mbr-normal display-5">{{ $post->title }}</h4>
                             <p class="mbr-text mbr-fonts-style status mbr-normal display-4">
-                                25-4-2012 &nbsp;/ &nbsp;By : Adam Steven</p>
+                                {!! $post->created_at !!} &nbsp;/ &nbsp;By : {{ $post->auther }}</p>
 
-                            <p class="mbr-text mbr-fonts-style mbr-normal display-4">
-                                ENOC sponsored the 15th Interschool Environmental Public Speaking Competition, which is organised by Emirates Environmental Group. This bi-lingual competition empowers the youth to take charge of ... </p>
+                            <p class="mbr-text mbr-fonts-style mbr-normal display-4"> {!! $post->summary !!} ... </p>
                         </div>
                         <div class="ico-wrap">
                             <div class="ico-box">
-                                <p class="mbr-text mbr-fonts-style phone mbr-normal display-4">Read More &gt;</p>
+                                <a href="/singlepost/{{ encrypt($post->id) }}"> <p class="mbr-text mbr-fonts-style phone mbr-normal display-4">Read More &gt;</p> </a>
                             </div>
 
 
@@ -61,8 +60,10 @@
 
             </div>
 
+            @empty
 
-
+            @endforelse
+{{ $posts->links() }}
 
 
 

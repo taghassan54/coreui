@@ -228,3 +228,21 @@
         <span>Users</span>
     </a>
 </li>
+<li class="nav-item {{ Request::is('settings*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('settings.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Settings</span>
+    </a>
+</li>
+<li class="nav-item {{ Request::is('libraryTypes*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('libraryTypes.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Library Types</span>
+    </a>
+</li>
+<li class="nav-item {{ Request::is('libraries*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('libraries.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Libraries</span>
+    </a>
+</li>

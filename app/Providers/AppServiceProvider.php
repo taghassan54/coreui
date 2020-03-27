@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use App\Models\Footer;
+use App\Models\Settings;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,6 +26,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->share('footer',Footer::first());
+        try {
+            $settings=Settings::all();
+            view()->share('settings',$settings);
+            view()->share('footer',Footer::first());
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+
     }
 }

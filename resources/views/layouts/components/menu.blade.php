@@ -22,12 +22,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true" >
                 <li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="#" >
-                        Home
+                    <a class="nav-link link text-white display-4" href="/privacy-policies" >
+                        privacy policies
                     </a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="#">
+                    <a class="nav-link link text-white display-4" href="/about-us">
                         About Us</a>
                 </li>
                 <li class="nav-item">
@@ -38,15 +39,17 @@
                     <a class="nav-link link text-white display-4" href="/blogs">
                         Blogs</a>
                 </li>
-                <li class="nav-item"><a class="nav-link link text-white display-4" href="#">
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="/news-events">
                         News and Events</a></li>
                 <li class="nav-item"><a class="nav-link link text-white display-4" href="/gallery">
                         Gallery</a></li>
-                <li class="nav-item"><a class="nav-link link text-white display-4" href="#">
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="/library">
                         Library</a></li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="/oure-partners">
+                    oure partners</a></li>
 
-                <li class="nav-item"><a class="nav-link link text-white display-4" href="#">
-                            العربية</a></li>
+               {{--  <li class="nav-item"><a class="nav-link link text-white display-4" href="#">
+                            العربية</a></li> --}}
             </ul>
 
         </div>

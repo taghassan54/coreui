@@ -3,15 +3,17 @@
         <thead>
             <th>Title</th>
         <th>Text</th>
-        <th>Date</th>
+        <th>Images</th>
+
             <th colspan="3">Action</th>
         </thead>
         <tbody>
         @foreach($news as $news)
             <tr>
-                <td>{{ $news->title }}</td>
+                <td  class="table-image">{{ $news->title }}</td>
             <td>{{ $news->text }}</td>
-            <td>{{ $news->date }}</td>
+            <td><img src="{{ $news->getFirstMediaUrl() }}" class="table-image" width="150" alt="" srcset=""></td>
+
                 <td>
                     {!! Form::open(['route' => ['news.destroy', $news->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

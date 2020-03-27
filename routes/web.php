@@ -31,9 +31,18 @@ Auth::routes(['register' => false]);
 
 Route::get('/', 'HomeController@welcome');
 Route::get('/singlepost/{post}', 'PostController@singlepost');
+Route::get('/single-event/{event}', 'EventController@single_event');
+Route::get('/single-news/{news}', 'NewsController@single_news');
 Route::get('/gallery', 'HomeController@gallery');
 Route::get('/fsqo-club', 'HomeController@club');
 Route::get('/blogs', 'HomeController@blogs');
+Route::get('/news-events', 'HomeController@news_events');
+Route::get('/privacy-policies', 'HomeController@privacy_policies');
+Route::get('/about-us', 'HomeController@about_us');
+Route::get('/join-us', 'HomeController@about_us');
+Route::get('/library', 'HomeController@library');
+Route::get('/oure-partners', 'HomeController@oure_partners');
+Route::view('/individual', 'forms.individual_form');
 
 Route::get('/admin-login',function(){
     if(auth()->check())
@@ -109,8 +118,17 @@ Route::resource('users', 'UserController')->middleware('auth');
 
 
 
+Route::posr('memberships', 'MembershipController@store');
 
 
 Route::resource('permissions', 'PermissionController');
 
 Route::resource('roles', 'RoleController');
+
+
+Route::resource('settings', 'SettingsController');
+
+
+Route::resource('libraryTypes', 'LibraryTypeController');
+
+Route::resource('libraries', 'LibraryController');

@@ -57,7 +57,13 @@ class NewsController extends AppBaseController
         $input = $request->all();
 
         $news = $this->newsRepository->create($input);
-
+        if($request->hasFile('file')){
+            $files=$request->file;
+            foreach ($files as $file) {
+                $news->addMedia($file)
+                ->toMediaCollection();
+            }
+        }
         Flash::success('News saved successfully.');
 
         return redirect(route('news.index'));
@@ -81,6 +87,25 @@ class NewsController extends AppBaseController
         }
 
         return view('news.show')->with('news', $news);
+    }
+    /**
+     * Display the specified News.
+     *
+     * @param int $id
+     *
+     * @return Response
+     */
+    public function single_news($id)
+    {
+        $news = $this->newsRepository->find($id);
+
+        if (empty($news)) {
+            Flash::error('News not found');
+
+            return back();
+        }
+
+        return view('single-news')->with('news', $news);
     }
 
     /**
@@ -119,6 +144,13 @@ class NewsController extends AppBaseController
             Flash::error('News not found');
 
             return redirect(route('news.index'));
+        }
+        if($request->hasFile('file')){
+            $files=$request->file;
+            foreach ($files as $file) {
+                $news->addMedia($file)
+                ->toMediaCollection();
+            }
         }
 
         $news = $this->newsRepository->update($request->all(), $id);
