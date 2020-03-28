@@ -31,7 +31,7 @@
 <!-- City Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('city_id', 'City Id:') !!}
-    {!! Form::number('city_id', null, ['class' => 'form-control']) !!}
+    {!! Form::text('city_id', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- District Field -->
@@ -95,6 +95,36 @@
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('other_memberships', 'Other Memberships:') !!}
     {!! Form::textarea('other_memberships', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Join As Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('join_as_id', 'Join As Id:') !!}
+    {!! Form::number('join_as_id', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Sparetime Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('sparetime_id', 'Sparetime Id:') !!}
+    {!! Form::number('sparetime_id', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Apprevation Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('apprevation', 'Apprevation:') !!}
+    {!! Form::text('apprevation', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Type Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('type', 'Type:') !!}
+    {!! Form::text('type', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Entity Type Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('entity_type', 'Entity Type:') !!}
+    {!! Form::text('entity_type', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

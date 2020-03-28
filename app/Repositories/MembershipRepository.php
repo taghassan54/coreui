@@ -8,7 +8,7 @@ use App\Repositories\BaseRepository;
 /**
  * Class MembershipRepository
  * @package App\Repositories
- * @version March 19, 2020, 2:43 pm UTC
+ * @version March 28, 2020, 4:42 am UTC
 */
 
 class MembershipRepository extends BaseRepository
@@ -30,7 +30,12 @@ class MembershipRepository extends BaseRepository
         'university_id',
         'comments',
         'Services_you_like_to_participate',
-        'other_memberships'
+        'other_memberships',
+        'join_as_id',
+        'sparetime_id',
+        'apprevation',
+        'type',
+        'entity_type'
     ];
 
     /**

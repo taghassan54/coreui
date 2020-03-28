@@ -42,7 +42,9 @@ Route::get('/about-us', 'HomeController@about_us');
 Route::get('/join-us', 'HomeController@about_us');
 Route::get('/library', 'HomeController@library');
 Route::get('/oure-partners', 'HomeController@oure_partners');
-Route::view('/individual', 'forms.individual_form');
+Route::get('/individual', 'MembershipController@individual_form');
+Route::get('/corporate', 'MembershipController@corporate_form');
+Route::view('/terms', 'terms');
 
 Route::get('/admin-login',function(){
     if(auth()->check())
@@ -118,7 +120,7 @@ Route::resource('users', 'UserController')->middleware('auth');
 
 
 
-Route::posr('memberships', 'MembershipController@store');
+Route::post('memberships', 'MembershipController@store');
 
 
 Route::resource('permissions', 'PermissionController');
@@ -132,3 +134,8 @@ Route::resource('settings', 'SettingsController');
 Route::resource('libraryTypes', 'LibraryTypeController');
 
 Route::resource('libraries', 'LibraryController');
+
+
+Route::resource('services', 'ServiceController');
+
+Route::resource('spareTimes', 'SpareTimeController');

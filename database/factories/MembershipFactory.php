@@ -16,7 +16,7 @@ $factory->define(Membership::class, function (Faker $faker) {
         'gender' => $faker->word,
         'age_range_id' => $faker->randomDigitNotNull,
         'nationality_id' => $faker->randomDigitNotNull,
-        'city_id' => $faker->randomDigitNotNull,
+        'city_id' => $faker->word,
         'district' => $faker->word,
         'block' => $faker->word,
         'graduation_date' => $faker->word,
@@ -24,6 +24,11 @@ $factory->define(Membership::class, function (Faker $faker) {
         'university_id' => $faker->randomDigitNotNull,
         'comments' => $faker->text,
         'Services_you_like_to_participate' => $faker->text,
-        'other_memberships' => $faker->text
+        'other_memberships' => $faker->text,
+        'join_as_id' => $faker->randomDigitNotNull,
+        'sparetime_id' => $faker->randomDigitNotNull,
+        'apprevation' => $faker->word,
+        'type' => $faker->word,
+        'entity_type' => $faker->word
     ];
 });

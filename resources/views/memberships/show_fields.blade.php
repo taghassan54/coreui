@@ -82,3 +82,33 @@
     <p>{{ $membership->other_memberships }}</p>
 </div>
 
+<!-- Join As Id Field -->
+<div class="form-group">
+    {!! Form::label('join_as_id', 'Join As Id:') !!}
+    <p>{{ $membership->join_as_id }}</p>
+</div>
+
+<!-- Sparetime Id Field -->
+<div class="form-group">
+    {!! Form::label('sparetime_id', 'Sparetime Id:') !!}
+    <p>{{ $membership->sparetime_id }}</p>
+</div>
+
+<!-- Apprevation Field -->
+<div class="form-group">
+    {!! Form::label('apprevation', 'Apprevation:') !!}
+    <p>{{ $membership->apprevation }}</p>
+</div>
+
+<!-- Type Field -->
+<div class="form-group">
+    {!! Form::label('type', 'Type:') !!}
+    <p>{{ $membership->type }}</p>
+</div>
+
+<!-- Entity Type Field -->
+<div class="form-group">
+    {!! Form::label('entity_type', 'Entity Type:') !!}
+    <p>{{ $membership->entity_type }}</p>
+</div>
+

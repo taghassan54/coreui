@@ -1,20 +1,15 @@
 <div class="table-responsive-sm">
     <table class="table table-striped" id="memberships-table">
         <thead>
-            <th>Country Id</th>
+            <th>Country </th>
         <th>Name</th>
         <th>Gender</th>
-        <th>Age Range Id</th>
-        <th>Nationality Id</th>
-        <th>City Id</th>
-        <th>District</th>
-        <th>Block</th>
-        <th>Graduation Date</th>
-        <th>Specialization Id</th>
-        <th>University Id</th>
-        <th>Comments</th>
-        <th>Services You Like To Participate</th>
+        <th>Age Range </th>
+        <th>Nationality </th>
         <th>Other Memberships</th>
+        <th>Join As</th>
+        <th>Sparetime</th>
+        <th>Type</th>
             <th colspan="3">Action</th>
         </thead>
         <tbody>
@@ -24,16 +19,11 @@
             <td>{{ $membership->name }}</td>
             <td>{{ $membership->gender }}</td>
             <td>{{ $membership->age_range_id }}</td>
-            <td>{{ $membership->nationality_id }}</td>
-            <td>{{ $membership->city_id }}</td>
-            <td>{{ $membership->district }}</td>
-            <td>{{ $membership->block }}</td>
-            <td>{{ $membership->graduation_date }}</td>
-            <td>{{ $membership->specialization_id }}</td>
-            <td>{{ $membership->university_id }}</td>
-            <td>{{ $membership->comments }}</td>
-            <td>{{ $membership->Services_you_like_to_participate }}</td>
+            <td>{{ @$membership->nationality->name }}</td>
             <td>{{ $membership->other_memberships }}</td>
+            <td>{{ @$membership->joinAs->name }}</td>
+            <td>{{ @$membership->spareTime->name }}</td>
+            <td>{{ $membership->type=='corporate'?'corporate':'individual' }}</td>
                 <td>
                     {!! Form::open(['route' => ['memberships.destroy', $membership->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

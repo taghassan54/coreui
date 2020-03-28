@@ -20,7 +20,7 @@
 
                     <div class="col-md-12 input-group-btn">
                         <a href="/individual"><button type="submit" class="btn btn-form btn-primary display-4">Individual</button></a>
-                        <button type="submit" class="btn btn-form btn-primary display-4">Corporate</button>
+                        <a href="/corporate" class="btn btn-form btn-primary display-4">Corporate</a>
                     </div>
                 </div>
             </div>

@@ -6,18 +6,17 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class ContactInfo
+ * Class Service
  * @package App\Models
- * @version March 19, 2020, 1:34 am UTC
+ * @version March 28, 2020, 12:33 am UTC
  *
- * @property string type
- * @property string value
+ * @property string name
  */
-class ContactInfo extends Model
+class Service extends Model
 {
     use SoftDeletes;
 
-    public $table = 'contact_info';
+    public $table = 'services';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
@@ -28,9 +27,7 @@ class ContactInfo extends Model
 
 
     public $fillable = [
-        'type',
-        'value',
-        'member_id'
+        'name'
     ];
 
     /**
@@ -40,8 +37,7 @@ class ContactInfo extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'type' => 'string',
-        'value' => 'string'
+        'name' => 'string'
     ];
 
     /**
@@ -50,8 +46,7 @@ class ContactInfo extends Model
      * @var array
      */
     public static $rules = [
-        'type' => 'required',
-        'value' => 'required'
+        'name' => 'required',
     ];
 
 

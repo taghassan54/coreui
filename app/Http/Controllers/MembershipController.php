@@ -7,6 +7,17 @@ use App\Http\Requests\UpdateMembershipRequest;
 use App\Repositories\MembershipRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
+use App\Models\Nationality;
+use App\Models\AgeRanges;
+use App\Models\Countriy;
+use App\Models\Specialization;
+use App\Models\University;
+use App\Models\FsooField;
+use App\Models\JoinAs;
+use App\Models\Service;
+use App\Models\SpareTime;
+use App\Models\ContactInfo;
+use App\Models\Experienc;
 use Flash;
 use Response;
 
@@ -18,6 +29,26 @@ class MembershipController extends AppBaseController
     public function __construct(MembershipRepository $membershipRepo)
     {
         $this->membershipRepository = $membershipRepo;
+        $nationalities = Nationality::all();
+        $ageRanges = AgeRanges::all();
+        $countries = Countriy::all();
+        $specializations = Specialization::all();
+        $University = University::all();
+        $FsooField = FsooField::all();
+        $JoinAs = JoinAs::all();
+        $services = Service::all();
+        $sparetime = SpareTime::all();
+        view()->share([
+            'nationalities' => $nationalities,
+            'ageRanges' => $ageRanges,
+            'countries' => $countries,
+            'specializations' => $specializations,
+            'university' => $University,
+            'FsooField' => $FsooField,
+            'JoinAs' => $JoinAs,
+            'services' => $services,
+            'sparetime' => $sparetime,
+        ]);
     }
 
     /**
@@ -46,6 +77,25 @@ class MembershipController extends AppBaseController
     }
 
     /**
+     * Show the form for creating a new Membership.
+     *
+     * @return Response
+     */
+    public function individual_form()
+    {
+        return view('forms.individual_form');
+    }
+    /**
+     * Show the form for creating a new Membership.
+     *
+     * @return Response
+     */
+    public function corporate_form()
+    {
+        return view('forms.corporate_form');
+    }
+
+    /**
      * Store a newly created Membership in storage.
      *
      * @param CreateMembershipRequest $request
@@ -54,13 +104,38 @@ class MembershipController extends AppBaseController
      */
     public function store(CreateMembershipRequest $request)
     {
-        $input = $request->all();
+         $input = $request->all();
 
         $membership = $this->membershipRepository->create($input);
 
+        if(isset($request->Facebook))
+        ContactInfo::create(
+         [
+            'type'=>'Facebook',
+            'value'=>$input['Facebook'],
+            'member_id'=>$membership->id
+         ]
+        );
+        if(isset($request->Twitter))
+        ContactInfo::create(
+            [
+               'type'=>'Twitter',
+               'value'=>$input['Twitter'],
+               'member_id'=>$membership->id
+            ]
+           );
+
+           $input['member_id']=$membership->id;
+           try {
+            Experienc::create($input);
+           } catch (\Throwable $th) {
+               //throw $th;
+           }
+
+
         Flash::success('Membership saved successfully.');
 
-        return redirect(route('memberships.index'));
+        return back();
     }
 
     /**
@@ -133,9 +208,9 @@ class MembershipController extends AppBaseController
      *
      * @param int $id
      *
+     * @return Response
      * @throws \Exception
      *
-     * @return Response
      */
     public function destroy($id)
     {

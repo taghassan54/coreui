@@ -49,12 +49,12 @@
                 <span>Countriys</span>
             </a>
         </li>
-        <li class="nav-item {{ Request::is('cities*') ? 'active' : '' }}">
+{{--          <li class="nav-item {{ Request::is('cities*') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('cities.index') }}">
                 <i class="nav-icon icon-cursor"></i>
                 <span>Cities</span>
             </a>
-        </li>
+        </li>  --}}
         <li class="nav-item {{ Request::is('contactInfos*') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('contactInfos.index') }}">
                 <i class="nav-icon icon-cursor"></i>
@@ -244,5 +244,17 @@
     <a class="nav-link" href="{{ route('libraries.index') }}">
         <i class="nav-icon icon-cursor"></i>
         <span>Libraries</span>
+    </a>
+</li>
+<li class="nav-item {{ Request::is('services*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('services.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Services</span>
+    </a>
+</li>
+<li class="nav-item {{ Request::is('spareTimes*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('spareTimes.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Spare Times</span>
     </a>
 </li>

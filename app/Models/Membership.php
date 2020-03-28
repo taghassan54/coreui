@@ -8,10 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Membership
  * @package App\Models
- * @version March 19, 2020, 2:43 pm UTC
+ * @version March 28, 2020, 4:42 am UTC
  *
  * @property \App\Models\AgeRange ageRange
- * @property \App\Models\City city
  * @property \App\Models\Country country
  * @property \App\Models\Nationality nationality
  * @property \App\Models\Specialization specialization
@@ -23,7 +22,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string gender
  * @property integer age_range_id
  * @property integer nationality_id
- * @property integer city_id
+ * @property string city_id
  * @property string district
  * @property string block
  * @property string graduation_date
@@ -32,13 +31,18 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string comments
  * @property string Services_you_like_to_participate
  * @property string other_memberships
+ * @property integer join_as_id
+ * @property integer sparetime_id
+ * @property string apprevation
+ * @property string type
+ * @property string entity_type
  */
 class Membership extends Model
 {
     use SoftDeletes;
 
     public $table = 'memberships';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -61,7 +65,12 @@ class Membership extends Model
         'university_id',
         'comments',
         'Services_you_like_to_participate',
-        'other_memberships'
+        'other_memberships',
+        'join_as_id',
+        'sparetime_id',
+        'apprevation',
+        'type',
+        'entity_type'
     ];
 
     /**
@@ -76,7 +85,7 @@ class Membership extends Model
         'gender' => 'string',
         'age_range_id' => 'integer',
         'nationality_id' => 'integer',
-        'city_id' => 'integer',
+        'city_id' => 'string',
         'district' => 'string',
         'block' => 'string',
         'graduation_date' => 'date',
@@ -84,7 +93,12 @@ class Membership extends Model
         'university_id' => 'integer',
         'comments' => 'string',
         'Services_you_like_to_participate' => 'string',
-        'other_memberships' => 'string'
+        'other_memberships' => 'string',
+        'join_as_id' => 'integer',
+        'sparetime_id' => 'integer',
+        'apprevation' => 'string',
+        'type' => 'string',
+        'entity_type' => 'string'
     ];
 
     /**
@@ -115,13 +129,19 @@ class Membership extends Model
     {
         return $this->belongsTo(\App\Models\AgeRange::class, 'age_range_id');
     }
-
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function city()
+    public function joinAs()
     {
-        return $this->belongsTo(\App\Models\City::class, 'city_id');
+        return $this->belongsTo(\App\Models\JoinAs::class, 'join_as_id');
+    }
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function spareTime()
+    {
+        return $this->belongsTo(\App\Models\JoinAs::class, 'sparetime_id');
     }
 
     /**
