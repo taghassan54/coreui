@@ -60,7 +60,7 @@ class MembershipController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $memberships = $this->membershipRepository->paginate(5);
+        $memberships = $this->membershipRepository->paginate(15);
 
         return view('memberships.index')
             ->with('memberships', $memberships);

@@ -29,7 +29,7 @@ class ContactInfoController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $contactInfos = $this->contactInfoRepository->paginate(5);
+        $contactInfos = $this->contactInfoRepository->paginate(15);
 
         return view('contact_infos.index')
             ->with('contactInfos', $contactInfos);

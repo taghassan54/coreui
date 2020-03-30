@@ -17,6 +17,8 @@ class ContactUsController extends AppBaseController
 
     public function __construct(ContactUsRepository $contactUsRepo)
     {
+
+        $this->middleware('can:Contact us content');
         $this->contactUsRepository = $contactUsRepo;
     }
 

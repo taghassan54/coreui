@@ -18,7 +18,7 @@ class RoleController extends AppBaseController
 
     public function __construct(RoleRepository $roleRepo)
     {
-        // $this->middleware('permission:role-list');
+        $this->middleware('can:Permissions content');
         $this->roleRepository = $roleRepo;
         view()->share(['Permissions'=>Permission::all()]);
     }
@@ -32,7 +32,7 @@ class RoleController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $roles = $this->roleRepository->paginate(5);
+        $roles = $this->roleRepository->paginate(15);
 
         return view('roles.index')
             ->with('roles', $roles);
@@ -57,10 +57,12 @@ class RoleController extends AppBaseController
      */
     public function store(CreateRoleRequest $request)
     {
-        $input = $request->all();
+           $input = $request->all();
+
 
 
         $role = $this->roleRepository->create($input);
+
         $role->syncPermissions($request->Permissions);
 
         Flash::success('Role saved successfully.');

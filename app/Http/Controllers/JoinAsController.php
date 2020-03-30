@@ -29,7 +29,7 @@ class JoinAsController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $joinAs = $this->joinAsRepository->paginate(5);
+        $joinAs = $this->joinAsRepository->paginate(15);
 
         return view('join_as.index')
             ->with('joinAs', $joinAs);

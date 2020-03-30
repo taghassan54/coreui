@@ -17,6 +17,8 @@ class FrequentlyAskedQuestionController extends AppBaseController
 
     public function __construct(FrequentlyAskedQuestionRepository $frequentlyAskedQuestionRepo)
     {
+
+        $this->middleware('can:Frequently Asked Questions content');
         $this->frequentlyAskedQuestionRepository = $frequentlyAskedQuestionRepo;
     }
 
@@ -29,7 +31,7 @@ class FrequentlyAskedQuestionController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $frequentlyAskedQuestions = $this->frequentlyAskedQuestionRepository->paginate(5);
+        $frequentlyAskedQuestions = $this->frequentlyAskedQuestionRepository->paginate(15);
 
         return view('frequently_asked_questions.index')
             ->with('frequentlyAskedQuestions', $frequentlyAskedQuestions);

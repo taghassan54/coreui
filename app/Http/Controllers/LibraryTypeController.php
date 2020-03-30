@@ -29,7 +29,7 @@ class LibraryTypeController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $libraryTypes = $this->libraryTypeRepository->paginate(5);
+        $libraryTypes = $this->libraryTypeRepository->paginate(15);
 
         return view('library_types.index')
             ->with('libraryTypes', $libraryTypes);

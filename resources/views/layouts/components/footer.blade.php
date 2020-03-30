@@ -118,7 +118,7 @@
         container: 'map',
         style: 'mapbox://styles/mapbox/light-v10',
         center: [{{ $footer?$footer->lang:'' }},{{ $footer?$footer->lat:'' }}],
-        zoom: 15
+        zoom: 5
       });
       const marker = new mapboxgl.Marker();
       @if($footer->lang != 0 && $footer->lat !=0)

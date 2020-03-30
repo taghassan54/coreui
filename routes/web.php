@@ -13,15 +13,25 @@
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 Route::get('per',function(){
-/*     $permission = Permission::create(['name' => 'All Content']);
+/*     $permission = Permission::create(['name' => 'All content']);
+    $permission = Permission::create(['name' => 'Sliders content']);
     $permission = Permission::create(['name' => 'Gallery content']);
-    $permission = Permission::create(['name' => 'Settings']);
     $permission = Permission::create(['name' => 'Our Partners content']);
+    $permission = Permission::create(['name' => 'Our Teams content']);
+    $permission = Permission::create(['name' => 'Events content']);
+    $permission = Permission::create(['name' => 'News content']);
+    $permission = Permission::create(['name' => 'Library content']);
+    $permission = Permission::create(['name' => 'Settings content']);
     $permission = Permission::create(['name' => 'FSQO Community content']);
     $permission = Permission::create(['name' => 'Blogs content']);
-    $permission = Permission::create(['name' => 'News & Events content']);
-    $permission = Permission::create(['name' => 'Library & Publications content']);
-    $permission = Permission::create(['name' => 'About Us content']); */
+    $permission = Permission::create(['name' => 'About Us content']);
+    $permission = Permission::create(['name' => 'Permissions content']);
+    $permission = Permission::create(['name' => 'Footer content']);
+    $permission = Permission::create(['name' => 'Contact us content']);
+    $permission = Permission::create(['name' => 'Programs And Services content']);
+    $permission = Permission::create(['name' => 'Privacy Policy content']);
+    $permission = Permission::create(['name' => 'Memberships content']);
+    $permission = Permission::create(['name' => 'frequently Asked Questions content']); */
  /*    $permission = Permission::create(['name' => '']); */
 
 });

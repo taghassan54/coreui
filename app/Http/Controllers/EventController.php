@@ -18,7 +18,7 @@ class EventController extends AppBaseController
     public function __construct(EventRepository $eventRepo)
     {
         $this->eventRepository = $eventRepo;
-        $this->middleware('can:FSQO Community content');
+        $this->middleware('can:Events content');
     }
 
     /**
@@ -30,7 +30,7 @@ class EventController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $events = $this->eventRepository->paginate(5);
+        $events = $this->eventRepository->paginate(15);
 
         return view('events.index')
             ->with('events', $events);

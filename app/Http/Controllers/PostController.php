@@ -20,9 +20,10 @@ class PostController extends AppBaseController
 
     public function __construct(PostRepository $postRepo,postRepository $categoriesRepo )
     {
+        $this->middleware('can:Blogs content');
         $this->postRepository = $postRepo;
         $this->categories = $categoriesRepo;
-        $this->middleware('can:FSQO Community content');
+
     }
 
     /**
@@ -34,7 +35,7 @@ class PostController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $posts = $this->postRepository->paginate(5);
+        $posts = $this->postRepository->paginate(15);
         $categories= $this->categories->all();
          return view('posts.index')
             ->with('posts', $posts);

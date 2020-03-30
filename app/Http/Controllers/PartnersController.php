@@ -18,6 +18,7 @@ class PartnersController extends AppBaseController
     public function __construct(PartnersRepository $partnersRepo)
     {
         $this->partnersRepository = $partnersRepo;
+        $this->middleware('can:Our Partners content');
     }
 
     /**
@@ -29,7 +30,7 @@ class PartnersController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $partners = $this->partnersRepository->paginate(5);
+        $partners = $this->partnersRepository->paginate(15);
 
         return view('partners.index')
             ->with('partners', $partners);

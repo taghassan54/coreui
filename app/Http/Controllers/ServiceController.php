@@ -29,7 +29,7 @@ class ServiceController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $services = $this->serviceRepository->paginate(5);
+        $services = $this->serviceRepository->paginate(15);
 
         return view('services.index')
             ->with('services', $services);

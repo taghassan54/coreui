@@ -29,7 +29,7 @@ class SpareTimeController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $spareTimes = $this->spareTimeRepository->paginate(5);
+        $spareTimes = $this->spareTimeRepository->paginate(15);
 
         return view('spare_times.index')
             ->with('spareTimes', $spareTimes);

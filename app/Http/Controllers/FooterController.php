@@ -17,6 +17,8 @@ class FooterController extends AppBaseController
 
     public function __construct(FooterRepository $footerRepo)
     {
+
+        $this->middleware('can:Footer content');
         $this->footerRepository = $footerRepo;
     }
 
@@ -29,7 +31,7 @@ class FooterController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $footers = $this->footerRepository->paginate(5);
+        $footers = $this->footerRepository->paginate(15);
 
         return view('footers.index')
             ->with('footers', $footers);

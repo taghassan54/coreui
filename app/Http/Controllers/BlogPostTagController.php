@@ -30,7 +30,7 @@ class BlogPostTagController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $blogPostTags = $this->blogPostTagRepository->paginate(5);
+        $blogPostTags = $this->blogPostTagRepository->paginate(15);
 
         return view('blog_post_tags.index')
             ->with('blogPostTags', $blogPostTags);

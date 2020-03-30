@@ -17,7 +17,9 @@ class PermissionController extends AppBaseController
 
     public function __construct(PermissionRepository $permissionRepo)
     {
+        $this->middleware('can:Permissions content');
         $this->permissionRepository = $permissionRepo;
+
     }
 
     /**
@@ -29,7 +31,7 @@ class PermissionController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $permissions = $this->permissionRepository->paginate(5);
+        $permissions = $this->permissionRepository->paginate(150);
 
         return view('permissions.index')
             ->with('permissions', $permissions);

@@ -29,7 +29,7 @@ class CountriyController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $countriys = $this->countriyRepository->paginate(5);
+        $countriys = $this->countriyRepository->paginate(15);
 
         return view('countriys.index')
             ->with('countriys', $countriys);

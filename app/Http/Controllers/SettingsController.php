@@ -17,6 +17,7 @@ class SettingsController extends AppBaseController
 
     public function __construct(SettingsRepository $settingsRepo)
     {
+        $this->middleware('can:Settings content');
         $this->settingsRepository = $settingsRepo;
     }
 

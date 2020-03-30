@@ -30,7 +30,7 @@ class BlogCategoryController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $blogCategories = $this->blogCategoryRepository->paginate(5);
+        $blogCategories = $this->blogCategoryRepository->paginate(15);
 
         return view('blog_categories.index')
             ->with('blogCategories', $blogCategories);

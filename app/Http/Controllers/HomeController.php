@@ -73,14 +73,14 @@ class HomeController extends Controller
     }
     public function blogs()
     {
-        $posts= $this->posts->paginate(5);
+        $posts= $this->posts->paginate(15);
 
         return view('blogs',compact('posts'));
     }
     public function news_events()
     {
-        $events= Event::paginate(5);
-        $news= News::paginate(5);
+        $events= Event::paginate(15);
+        $news= News::paginate(15);
 
         return view('news-events',compact('events','news'));
     }

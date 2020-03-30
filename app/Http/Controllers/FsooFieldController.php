@@ -29,7 +29,7 @@ class FsooFieldController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $fsooFields = $this->fsooFieldRepository->paginate(5);
+        $fsooFields = $this->fsooFieldRepository->paginate(15);
 
         return view('fsoo_fields.index')
             ->with('fsooFields', $fsooFields);

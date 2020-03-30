@@ -18,7 +18,7 @@ class OurTeamController extends AppBaseController
     public function __construct(OurTeamRepository $ourTeamRepo)
     {
         $this->ourTeamRepository = $ourTeamRepo;
-        $this->middleware('can:Gallery content');
+        $this->middleware('can:Our Teams content');
     }
 
     /**
@@ -30,7 +30,7 @@ class OurTeamController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $ourTeams = $this->ourTeamRepository->paginate(5);
+        $ourTeams = $this->ourTeamRepository->paginate(15);
 
         return view('our_teams.index')
             ->with('ourTeams', $ourTeams);

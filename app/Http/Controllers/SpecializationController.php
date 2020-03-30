@@ -29,7 +29,7 @@ class SpecializationController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $specializations = $this->specializationRepository->paginate(5);
+        $specializations = $this->specializationRepository->paginate(15);
 
         return view('specializations.index')
             ->with('specializations', $specializations);

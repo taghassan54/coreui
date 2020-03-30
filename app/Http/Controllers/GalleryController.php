@@ -30,7 +30,7 @@ class GalleryController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $galleries = $this->galleryRepository->paginate(5);
+        $galleries = $this->galleryRepository->paginate(15);
 
         return view('galleries.index')
             ->with('galleries', $galleries);

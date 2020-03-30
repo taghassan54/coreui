@@ -18,6 +18,7 @@ class NewsController extends AppBaseController
     public function __construct(NewsRepository $newsRepo)
     {
         $this->newsRepository = $newsRepo;
+        $this->middleware('can:News content');
     }
 
     /**
@@ -29,7 +30,7 @@ class NewsController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $news = $this->newsRepository->paginate(5);
+        $news = $this->newsRepository->paginate(15);
 
         return view('news.index')
             ->with('news', $news);

@@ -17,6 +17,8 @@ class PrivacyPolicyController extends AppBaseController
 
     public function __construct(PrivacyPolicyRepository $privacyPolicyRepo)
     {
+
+        $this->middleware('can:Privacy Policy content');
         $this->privacyPolicyRepository = $privacyPolicyRepo;
     }
 
@@ -29,7 +31,7 @@ class PrivacyPolicyController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $privacyPolicies = $this->privacyPolicyRepository->paginate(5);
+        $privacyPolicies = $this->privacyPolicyRepository->paginate(15);
 
         return view('privacy_policies.index')
             ->with('privacyPolicies', $privacyPolicies);

@@ -29,7 +29,7 @@ class AgeRangesController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $ageRanges = $this->ageRangesRepository->paginate(5);
+        $ageRanges = $this->ageRangesRepository->paginate(15);
 
         return view('age_ranges.index')
             ->with('ageRanges', $ageRanges);

@@ -31,7 +31,7 @@ class CityController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $cities = $this->cityRepository->paginate(5);
+        $cities = $this->cityRepository->paginate(15);
         return view('cities.index')
             ->with('cities', $cities);
     }

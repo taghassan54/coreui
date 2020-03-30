@@ -18,6 +18,7 @@ class SliderController extends AppBaseController
     public function __construct(SliderRepository $sliderRepo)
     {
         $this->sliderRepository = $sliderRepo;
+        $this->middleware('can:Sliders content');
     }
 
     /**
@@ -29,7 +30,7 @@ class SliderController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $sliders = $this->sliderRepository->paginate(5);
+        $sliders = $this->sliderRepository->paginate(15);
 
         return view('sliders.index')
             ->with('sliders', $sliders);
@@ -126,7 +127,7 @@ class SliderController extends AppBaseController
         if($request->hasFile('file')){
             foreach ($slider->getMedia() as $media) {
                 $media->delete();
-    
+
             }
             $slider
             ->addMedia($request->file)

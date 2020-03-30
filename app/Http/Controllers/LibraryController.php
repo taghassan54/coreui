@@ -18,6 +18,7 @@ class LibraryController extends AppBaseController
 
     public function __construct(LibraryRepository $libraryRepo)
     {
+        $this->middleware('can:Library content');
         $this->libraryRepository = $libraryRepo;
         $library_types=LibraryType::all();
         view()->share('library_types',$library_types);
@@ -32,7 +33,7 @@ class LibraryController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $libraries = $this->libraryRepository->paginate(5);
+        $libraries = $this->libraryRepository->paginate(15);
 
         return view('libraries.index')
             ->with('libraries', $libraries);

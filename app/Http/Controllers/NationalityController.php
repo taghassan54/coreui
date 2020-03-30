@@ -29,7 +29,7 @@ class NationalityController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $nationalities = $this->nationalityRepository->paginate(5);
+        $nationalities = $this->nationalityRepository->paginate(15);
 
         return view('nationalities.index')
             ->with('nationalities', $nationalities);

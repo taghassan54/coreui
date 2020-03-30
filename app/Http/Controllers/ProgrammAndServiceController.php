@@ -17,6 +17,8 @@ class ProgrammAndServiceController extends AppBaseController
 
     public function __construct(ProgrammAndServiceRepository $programmAndServiceRepo)
     {
+
+        $this->middleware('can:Programs And Services content');
         $this->programmAndServiceRepository = $programmAndServiceRepo;
     }
 
@@ -29,7 +31,7 @@ class ProgrammAndServiceController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $programmAndServices = $this->programmAndServiceRepository->paginate(5);
+        $programmAndServices = $this->programmAndServiceRepository->paginate(15);
 
         return view('programm_and_services.index')
             ->with('programmAndServices', $programmAndServices);

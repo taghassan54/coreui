@@ -29,7 +29,7 @@ class UniversityController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $universities = $this->universityRepository->paginate(5);
+        $universities = $this->universityRepository->paginate(15);
 
         return view('universities.index')
             ->with('universities', $universities);
