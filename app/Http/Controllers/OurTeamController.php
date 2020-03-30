@@ -18,6 +18,7 @@ class OurTeamController extends AppBaseController
     public function __construct(OurTeamRepository $ourTeamRepo)
     {
         $this->ourTeamRepository = $ourTeamRepo;
+        $this->middleware('can:Gallery content');
     }
 
     /**

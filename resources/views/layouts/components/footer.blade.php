@@ -43,14 +43,14 @@
                         <br>Fax: {{ $footer?$footer->fax:'' }}
                     </p>
                 </div>
-            {{--     <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                <div class="col-12 col-md-3 mbr-fonts-style display-7">
                     <p class="mbr-text">
                         <strong>Links</strong>
                         <br>
-                        <br>Privacy Policy<br>Terms of Use<br>Staff Links<br>
+                        <br><a href="/privacy-policies"> Privacy Policy </a> <br> <a href="/terms"> Terms  of Use </a>  <br><a href="/login">admin login</a><br>
                         <br>&nbsp;<br>
                         <br>&nbsp;</p>
-                </div> --}}
+                </div>
                 <div class="col-12 col-md-6">
 
                     <div class="form-group">

@@ -9,6 +9,7 @@
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 
         <!-- Styles -->
         <style>
@@ -56,6 +57,9 @@
 
             <div class="message" style="padding: 10px;">
                 @yield('message')
+            </div>
+            <div class="message" style="padding: 10px;">
+                @yield('action')
             </div>
         </div>
     </body>

@@ -18,6 +18,7 @@ class GalleryController extends AppBaseController
     public function __construct(GalleryRepository $galleryRepo)
     {
         $this->galleryRepository = $galleryRepo;
+        $this->middleware('can:Gallery content');
     }
 
     /**

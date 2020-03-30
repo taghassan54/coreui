@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Models\Role;
 use App\Repositories\UserRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
+use DB;
 use Flash;
-use Response;
 use Hash;
+use Illuminate\Http\Request;
+use Response;
 
 class UserController extends AppBaseController
 {
@@ -19,6 +21,7 @@ class UserController extends AppBaseController
     public function __construct(UserRepository $userRepo)
     {
         $this->userRepository = $userRepo;
+        view()->share(['roles' => Role::all()]);
     }
 
     /**
@@ -57,6 +60,8 @@ class UserController extends AppBaseController
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
         $user = $this->userRepository->create($input);
+
+        $user->assignRole($request->input('roles'));
 
         Flash::success('User saved successfully.');
 
@@ -100,7 +105,9 @@ class UserController extends AppBaseController
             return redirect(route('users.index'));
         }
 
-        return view('users.edit')->with('user', $user);
+        $userRole = $user->roles->pluck('name', 'name')->all();
+
+        return view('users.edit', compact('userRole'))->with('user', $user);
     }
 
     /**
@@ -120,13 +127,19 @@ class UserController extends AppBaseController
 
             return redirect(route('users.index'));
         }
-        $input =  $request->all();
+        $input = $request->all();
         if (!empty($input['password'])) {
             $input['password'] = Hash::make($input['password']);
         } else {
             unset($input['password']);
         }
         $user = $this->userRepository->update($input, $id);
+
+        if (isset($request->roles)) {
+            DB::table('model_has_roles')->where('model_id', $id)->delete();
+
+            $user->assignRole($request->input('roles'));
+        }
 
         Flash::success('User updated successfully.');
 

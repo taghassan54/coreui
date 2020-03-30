@@ -1,4 +1,6 @@
 
+@can('FSQO Community content')
+
 
 <li class="nav-item  nav-dropdown  ">
     <a class="nav-link  nav-dropdown-toggle " href="#">
@@ -28,7 +30,7 @@
 
     </ul>
 </li>
-
+@endcan
 
 
 <li class="nav-item  nav-dropdown  ">
@@ -87,6 +89,33 @@
         </li>
 
 
+        <li class="nav-item {{ Request::is('joinAs*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('joinAs.index') }}">
+                <i class="nav-icon icon-cursor"></i>
+                <span>Join As</span>
+            </a>
+        </li>
+
+        <li class="nav-item {{ Request::is('fsooFields*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('fsooFields.index') }}">
+                <i class="nav-icon icon-cursor"></i>
+                <span>Fsoo Fields</span>
+            </a>
+        </li>
+
+        <li class="nav-item {{ Request::is('services*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('services.index') }}">
+                <i class="nav-icon icon-cursor"></i>
+                <span>Services</span>
+            </a>
+        </li>
+        <li class="nav-item {{ Request::is('spareTimes*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('spareTimes.index') }}">
+                <i class="nav-icon icon-cursor"></i>
+                <span>Spare Times</span>
+            </a>
+        </li>
+
     </ul>
 </li>
 
@@ -110,6 +139,7 @@
                 <span>Our Teams</span>
             </a>
         </li>
+
 
 
     </ul>
@@ -157,19 +187,6 @@
             </a>
         </li>
 
-        <li class="nav-item {{ Request::is('joinAs*') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('joinAs.index') }}">
-                <i class="nav-icon icon-cursor"></i>
-                <span>Join As</span>
-            </a>
-        </li>
-
-        <li class="nav-item {{ Request::is('fsooFields*') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('fsooFields.index') }}">
-                <i class="nav-icon icon-cursor"></i>
-                <span>Fsoo Fields</span>
-            </a>
-        </li>
 
         <li class="nav-item {{ Request::is('footers*') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('footers.index') }}">
@@ -208,32 +225,8 @@
     </a>
 </li>
 
-<li class="nav-item {{ Request::is('permissions*') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('permissions.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Permissions</span>
-    </a>
-</li>
-<li class="nav-item {{ Request::is('roles*') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('roles.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Roles</span>
-    </a>
-</li>
 
 
-<li class="nav-item {{ Request::is('users*') ? 'active' : '' }}">
-    <a class="nav-link" href="{!! route('users.index') !!}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Users</span>
-    </a>
-</li>
-<li class="nav-item {{ Request::is('settings*') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('settings.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Settings</span>
-    </a>
-</li>
 <li class="nav-item {{ Request::is('libraryTypes*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('libraryTypes.index') }}">
         <i class="nav-icon icon-cursor"></i>
@@ -246,15 +239,38 @@
         <span>Libraries</span>
     </a>
 </li>
-<li class="nav-item {{ Request::is('services*') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('services.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Services</span>
+
+
+<li class="nav-item  nav-dropdown  ">
+    <a class="nav-link  nav-dropdown-toggle " href="#">
+        users
     </a>
+    <ul class="nav-dropdown-items">
+        <li class="nav-item {{ Request::is('permissions*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('permissions.index') }}">
+                <i class="nav-icon icon-cursor"></i>
+                <span>Permissions</span>
+            </a>
+        </li>
+        <li class="nav-item {{ Request::is('roles*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('roles.index') }}">
+                <i class="nav-icon icon-cursor"></i>
+                <span>Roles</span>
+            </a>
+        </li>
+
+
+        <li class="nav-item {{ Request::is('users*') ? 'active' : '' }}">
+            <a class="nav-link" href="{!! route('users.index') !!}">
+                <i class="nav-icon icon-cursor"></i>
+                <span>Users</span>
+            </a>
+        </li>
+    </ul>
 </li>
-<li class="nav-item {{ Request::is('spareTimes*') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('spareTimes.index') }}">
+<li class="nav-item {{ Request::is('settings*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('settings.index') }}">
         <i class="nav-icon icon-cursor"></i>
-        <span>Spare Times</span>
+        <span>Settings</span>
     </a>
 </li>

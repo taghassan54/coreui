@@ -22,6 +22,7 @@ class PostController extends AppBaseController
     {
         $this->postRepository = $postRepo;
         $this->categories = $categoriesRepo;
+        $this->middleware('can:FSQO Community content');
     }
 
     /**

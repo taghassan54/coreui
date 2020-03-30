@@ -9,7 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
-
+use Spatie\Permission\Models\Permission;
 class BlogCategoryController extends AppBaseController
 {
     /** @var  BlogCategoryRepository */
@@ -18,6 +18,7 @@ class BlogCategoryController extends AppBaseController
     public function __construct(BlogCategoryRepository $blogCategoryRepo)
     {
         $this->blogCategoryRepository = $blogCategoryRepo;
+        $this->middleware('can:FSQO Community content');
     }
 
     /**

@@ -3,6 +3,7 @@
         <thead>
         <th>Name</th>
         <th>Email</th>
+        <th>Roles</th>
         <th colspan="3">Action</th>
         </thead>
         <tbody>
@@ -10,6 +11,13 @@
             <tr>
                 <td>{!! $user->name !!}</td>
                 <td>{!! $user->email !!}</td>
+                <td>
+                    @if(!empty($user->getRoleNames()))
+                      @foreach($user->getRoleNames() as $v)
+                         <label class="badge badge-success">{{ $v }}</label>
+                      @endforeach
+                    @endif
+                  </td>
                 <td>
                     {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

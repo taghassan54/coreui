@@ -10,7 +10,7 @@ use App\Models\Permission;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
-
+use DB;
 class RoleController extends AppBaseController
 {
     /** @var  RoleRepository */
@@ -18,6 +18,7 @@ class RoleController extends AppBaseController
 
     public function __construct(RoleRepository $roleRepo)
     {
+        // $this->middleware('permission:role-list');
         $this->roleRepository = $roleRepo;
         view()->share(['Permissions'=>Permission::all()]);
     }
@@ -126,6 +127,8 @@ class RoleController extends AppBaseController
         }
 
         $role = $this->roleRepository->update($request->all(), $id);
+
+        $role->syncPermissions($request->Permissions);
 
         Flash::success('Role updated successfully.');
 

@@ -18,6 +18,7 @@ class BlogPostTagController extends AppBaseController
     public function __construct(BlogPostTagRepository $blogPostTagRepo)
     {
         $this->blogPostTagRepository = $blogPostTagRepo;
+        $this->middleware('can:FSQO Community content');
     }
 
     /**

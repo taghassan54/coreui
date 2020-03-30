@@ -10,15 +10,14 @@
     <p>{!! $user->email !!}</p>
 </div>
 
-<!-- Created At Field -->
-<div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $user->created_at !!}</p>
-</div>
-
-<!-- Updated At Field -->
-<div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $user->updated_at !!}</p>
-</div>
+<div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Roles:</strong>
+            @if(!empty($user->getRoleNames()))
+                @foreach($user->getRoleNames() as $v)
+                    <label class="badge badge-success">{{ $v }}</label>
+                @endforeach
+            @endif
+        </div>
+    </div>
 

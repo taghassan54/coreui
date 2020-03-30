@@ -18,6 +18,7 @@ class EventController extends AppBaseController
     public function __construct(EventRepository $eventRepo)
     {
         $this->eventRepository = $eventRepo;
+        $this->middleware('can:FSQO Community content');
     }
 
     /**
