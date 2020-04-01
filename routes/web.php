@@ -12,6 +12,8 @@
 */
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+
+
 Route::get('per',function(){
 /*     $permission = Permission::create(['name' => 'All content']);
     $permission = Permission::create(['name' => 'Sliders content']);
@@ -36,6 +38,9 @@ Route::get('per',function(){
 
 });
 
+Route::get('/foo', function () {
+    Artisan::call('storage:link');
+});
 
 Auth::routes(['register' => false]);
 

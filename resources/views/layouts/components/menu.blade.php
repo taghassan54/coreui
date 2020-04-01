@@ -21,11 +21,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true" >
-                <li class="nav-item">
+               {{--  <li class="nav-item">
                     <a class="nav-link link text-white display-4" href="/privacy-policies" >
                         privacy policies
                     </a>
-                </li>
+                </li> --}}
 
                 <li class="nav-item">
                     <a class="nav-link link text-white display-4" href="/about-us">

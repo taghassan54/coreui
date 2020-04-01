@@ -22,21 +22,23 @@
     </div>
 </section>
 
-{{-- <section class="mbr-section article content1 cid-rScjdBThvJ" id="content2-53">
+<section class="mbr-section article content1 cid-rScjdBThvJ" id="content2-53">
 
 
 
     <div class="container">
         <div class="media-container-row">
             <div class="mbr-text col-12 col-md-10 mbr-fonts-style display-7">
-                <blockquote> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et vero asperiores dolorem placeat blanditiis eligendi iure laborum, eum ratione ullam dolore at assumenda ad inventore alias. Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Et vero asperiores dolorem placeat blanditiis eligendi iure laborum, eum ratione ullam dolore at assumenda ad inventore alias. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et vero asperiores dolorem placeat blanditiis
-                    eligendi iure laborum, eum ratione ullam dolore at assumenda ad inventore alias. </blockquote>
+                <blockquote>
+
+                    {{ $settings->where('key','Our Partners')->first()?$settings->where('key','Our Partners')->first()->value:'' }}
+
+                </blockquote>
             </div>
         </div>
     </div>
 </section>
- --}}
+
 <section class="carousel slide testimonials-slider cid-rScjnAd8LH" data-interval="false" id="testimonials-slider1-54">
 
 

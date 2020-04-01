@@ -1,5 +1,5 @@
 
-@can('FSQO Community content')
+{{-- @can('FSQO Community content') --}}
 
 
 <li class="nav-item  nav-dropdown  ">
@@ -30,7 +30,7 @@
 
     </ul>
 </li>
-@endcan
+{{-- @endcan --}}
 
 
 <li class="nav-item  nav-dropdown  ">

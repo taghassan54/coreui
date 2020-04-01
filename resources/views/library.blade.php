@@ -55,7 +55,7 @@
                                         <div class="col-md-8">
                                             <div class="row card-box">
                                                 <div class="col-md-8">
-                                                    <a href="{{ $library->getFirstMediaUrl() }}"><h3 class="mbr-text mbr-fonts-style align-left display-7"><br>Download {{-- &nbsp;| Open --}}</h3></a>
+                                                    <a href="{{ $library->getFirstMediaUrl() }}" target="_blank()"><h3 class="mbr-text mbr-fonts-style align-left display-7"><br>Download {{-- &nbsp;| Open --}}</h3></a>
                                                 </div>
                                                 <div class="col-md-4">
                                                     {{-- <p class="mbr-price  mbr-fonts-style align-right display-4">free</p> --}}

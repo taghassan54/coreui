@@ -1,11 +1,6 @@
-
-
+{{--
 
  <section class="extForm cid-rRfjmIhpdW mbr-parallax-background" id="extForm7-d">
-
-
-
-
     <div class="container">
         <div class="row main-row justify-content-center">
 
@@ -27,3 +22,4 @@
         </div>
     </div>
 </section>
+ --}}
