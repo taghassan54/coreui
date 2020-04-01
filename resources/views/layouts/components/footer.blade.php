@@ -67,7 +67,7 @@
                 </div>
                 <div class="media-container-row mbr-white">
                     <div class="col-sm-6 copyright">
-                        <p class="mbr-text mbr-fonts-style display-7">Copyright © &nbsp;2020<br>Food Safety and Quality Organization , All rights reserved.<br>Designed &amp; Developed by Inspire Software</p>
+                        <p class="mbr-text mbr-fonts-style display-7">Copyright © &nbsp;2020<br>Food Safety and Quality Organization , All rights reserved.<br>  Designed &amp; Developed by <a href="https://www.inspiresoft.co"> Inspire Software </a></p>
                     </div>
                     <div class="col-md-6">
                         <div class="social-list align-right">

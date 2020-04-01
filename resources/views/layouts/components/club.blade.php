@@ -58,7 +58,7 @@
                             <h4 class="card-title pb-2 align-left mbr-white mbr-fonts-style display-5">{{ $post->title }}</h4>
                             <p class="mbr-text align-left mbr-regular mbr- mbr-fonts-style display-4">By {{ $post->auther }} <br>{!! $post->created_at !!}<br><br>{!! $post->summary !!}</p>
                         </div>
-                        <a href="/singlepost/{{ encrypt($post->id) }}"><span class="mbr-iconfont icon mobi-mbri-right mobi-mbri" style="color: rgb(255, 255, 255); fill: rgb(255, 255, 255);"></span></a>
+                        <a href="/singlepost/{{ encrypt($post->id) }}"><span class="mbr-iconfont icon mobi-mbri-right mobi-mbri  fa fa-arrow-right" style="color: rgb(255, 255, 255); fill: rgb(255, 255, 255);"></span></a>
                     </div>
                 </div>
                 @empty
@@ -87,14 +87,14 @@
                        @foreach ($faq as $item)
                        <div class="card">
                         <div class="card-header" role="tab" id="headingOne">
-                            <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse1_21" aria-expanded="false" aria-controls="collapse1">
+                            <a role="button" class="collapsed panel-title" data-toggle="collapse" data-core="" href="#collapse1_{{ $item->id }}" aria-expanded="false" aria-controls="collapse1">
                                 <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>
                                 <h6 class="mbr-fonts-style header-text display-6">
                                     {{ $item->question }}
                                 </h6>
                             </a>
                         </div>
-                        <div id="collapse1_21" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#bootstrap-accordion_21">
+                        <div id="collapse1_{{ $item->id }}" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#bootstrap-accordion_21">
                             <div class="panel-body p-4">
                                 <p class="mbr-fonts-style panel-text display-7">
                                         {{ $item->answer }}
