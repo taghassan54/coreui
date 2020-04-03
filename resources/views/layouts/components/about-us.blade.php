@@ -50,7 +50,7 @@
                     <div class="content1">
                         <h4 class="box-title2 mbr-medium mbr-white pb-2 mbr-fonts-style display-2"><strong>Our Mission</strong></h4>
                         <h3 class="box-text2 mbr-regular mbr-white pb-2 mbr-fonts-style display-5">
-                            {{ $settings->where('key','Our Mission')->first()?$settings->where('key','Our Mission')->first()->value:'' }}
+                            {!! $settings->where('key','Our Mission')->first()?$settings->where('key','Our Mission')->first()->value:'' !!}
                         </h3>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
 
                     <h2 class="mbr-section-title mbr-semibold mbr-black pb-4 mbr-fonts-style display-2">Our Vision</h2>
                     <p class="mbr-text mbr-black mbr-regular mbr-light mbr-fonts-style display-7">
-                        {{ $settings->where('key','Our Vision')->first()?$settings->where('key','Our Vision')->first()->value:'' }}
+                        {!! $settings->where('key','Our Vision')->first()?$settings->where('key','Our Vision')->first()->value:'' !!}
                         <br>
                     </p>
 

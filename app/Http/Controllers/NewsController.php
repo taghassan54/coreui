@@ -18,7 +18,7 @@ class NewsController extends AppBaseController
     public function __construct(NewsRepository $newsRepo)
     {
         $this->newsRepository = $newsRepo;
-        $this->middleware('can:News content');
+        $this->middleware('can:News content')->except('single_news');
     }
 
     /**

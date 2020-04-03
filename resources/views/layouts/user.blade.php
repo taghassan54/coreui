@@ -30,6 +30,14 @@
 
 
     <link rel="stylesheet" href="/assets/wowslider-init/boundary/style.css">
+    <style>
+        .cid-rRqSZo7FUh h2, .cid-rRqSZo7FUh h3, .cid-rRqSZo7FUh h4{
+            color: black
+        }
+        #our_services{
+            background-color: #efefef;
+        }
+    </style>
     @yield('css')
 </head>
 <body>

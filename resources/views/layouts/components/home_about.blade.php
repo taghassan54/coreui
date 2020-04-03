@@ -13,7 +13,7 @@
                     <h2 class="mbr-section-title mbr-fonts-style pb-4 mbr-white display-1">About <strong>US</strong></h2>
                     <div class="paragraphs-wrapper pb-4">
                         <p class="mbr-text mbr-fonts-style mbr-lighter  display-7">
-                            {{ $settings->where('key','About US')->first()?$settings->where('key','About US')->first()->value:'' }}
+                            {!!  $settings->where('key','About US')->first()?$settings->where('key','About US')->first()->value:''  !!}
                         </p>
 
                     </div>

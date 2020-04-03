@@ -31,7 +31,7 @@
             <div class="first-col col-md-6">
                 <h3 class="mbr-section-subtitle  mbr-fonts-style align-left mbr-regular display-7">
 
-                    {{ $news->text }}
+                    {!! $news->text !!}
 
                 </h3>
 

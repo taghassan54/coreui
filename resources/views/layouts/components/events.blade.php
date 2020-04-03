@@ -27,7 +27,7 @@
                                 {{ $item->date }} </p>
 
                             <p class="mbr-text mbr-fonts-style mbr-normal display-4">
-                                {{ $item->text }} </p>
+                                {!! $item->text !!} </p>
                         </div>
                         <div class="ico-wrap">
                             <div class="ico-box">

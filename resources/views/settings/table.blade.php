@@ -9,7 +9,7 @@
         @foreach($settings as $settings)
             <tr>
                 <td>{{ $settings->key }}</td>
-            <td>{{ $settings->value }}</td>
+            <td>{!! $settings->value !!}</td>
                 <td>
                     {!! Form::open(['route' => ['settings.destroy', $settings->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

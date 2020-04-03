@@ -32,7 +32,7 @@
         <h2 class="mbr-section-title pb-3 mbr-fonts-style mbr-bold align-left display-2">&nbsp;</h2>
         <div class="row">
             <div class="first-col col-md-12">
-              <h6>  {{ $settings->where('key','Terms And Conditions')->first()?$settings->where('key','Terms And Conditions')->first()->value:'' }}</h6>
+              <h6>  {!! $settings->where('key','Terms And Conditions')->first()?$settings->where('key','Terms And Conditions')->first()->value:'' !!}</h6>
               <br>
             </div>
 

@@ -41,11 +41,8 @@
             </div>
             <div class="col-md-6 col-lg-6">
                 <div class="text-block">
-                    <h2 class="mb-4 mbr-fonts-style mbr-section-title display-2">Let’s Get <strong>in Touch</strong></h2>
-                    <h3 class="mbr-section-subtitle mbr-fonts-style mb-4 display-5">
-                        Whatever types of questions you,ll have, feel free to get in touch with us!
-                    </h3>
 
+                    {!! $settings->where('key','Contact Us Box')->first()?$settings->where('key','Contact Us Box')->first()->value:'' !!}
                 </div>
                 <p class="mb-4 mbr-fonts-style subtext display-7 pt-5">*We dont share your personal info with anyone. Check out our privacy policy for more information.</p>
             </div>
@@ -95,6 +92,8 @@
             </div>
             <div class="col-md-6 col-lg-6">
                 <div class="text-block">
+                    Contact Us Box
+
                     <h2 class="mb-4 mbr-fonts-style mbr-section-title display-2">Let’s Get <strong>in Touch</strong></h2>
                     <h3 class="mbr-section-subtitle mbr-fonts-style mb-4 display-5">
                         Whatever types of questions you ll have, feel free to get in touch with us!

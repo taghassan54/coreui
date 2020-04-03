@@ -42,12 +42,12 @@
     </button>
 
     <ul class="nav navbar-nav ml-auto">
-        <li class="nav-item d-md-down-none">
+        {{-- <li class="nav-item d-md-down-none">
             <a class="nav-link" href="#">
                 <i class="icon-bell"></i>
                 <span class="badge badge-pill badge-danger">5</span>
             </a>
-        </li>
+        </li> --}}
         <li class="nav-item dropdown">
             <a class="nav-link" style="margin-right: 10px" data-toggle="dropdown" href="#" role="button"
                aria-haspopup="true" aria-expanded="false">
@@ -94,7 +94,7 @@
 
     </div>
     <div class="ml-auto">
-       
+
     </div>
 </footer>
 </body>

@@ -78,7 +78,7 @@
 <div class="modal-content">
 
   <div class="modal-body">
-    {{ $settings->where('key','Join Us or Donate')->first()?$settings->where('key','Join Us or Donate')->first()->value:'' }}
+    {!! $settings->where('key','Join Us or Donate')->first()?$settings->where('key','Join Us or Donate')->first()->value:'' !!}
   </div>
 
 </div>

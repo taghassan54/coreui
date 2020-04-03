@@ -112,7 +112,7 @@ class SettingsController extends AppBaseController
      *
      * @return Response
      */
-    public function update($id, UpdateSettingsRequest $request)
+    public function update($id, Request $request)
     {
         $settings = $this->settingsRepository->find($id);
 

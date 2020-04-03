@@ -42,7 +42,7 @@
 
                             <h2 class="mbr-section-title align-left py-4 mbr-semibold mbr-white mbr-fonts-style display-2">Blogs</h2>
                             <p class="mbr-text mbr-black align-left mbr-regular mbr-light mbr-fonts-style display-5">
-                                {{ $settings->where('key','FSQO CLUB')->first()?$settings->where('key','FSQO CLUB')->first()->value:'' }}
+                                {!! $settings->where('key','FSQO CLUB')->first()?$settings->where('key','FSQO CLUB')->first()->value:'' !!}
                                 <br><br>
                                 <a href="/blogs"><strong>Read More blogs &gt;</strong></a></p>
                         </div>

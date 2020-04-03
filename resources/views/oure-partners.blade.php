@@ -31,7 +31,7 @@
             <div class="mbr-text col-12 col-md-10 mbr-fonts-style display-7">
                 <blockquote>
 
-                    {{ $settings->where('key','Our Partners')->first()?$settings->where('key','Our Partners')->first()->value:'' }}
+                    {!! $settings->where('key','Our Partners')->first()?$settings->where('key','Our Partners')->first()->value:'' !!}
 
                 </blockquote>
             </div>

@@ -20,7 +20,7 @@ class PostController extends AppBaseController
 
     public function __construct(PostRepository $postRepo,postRepository $categoriesRepo )
     {
-        $this->middleware('can:Blogs content');
+        $this->middleware('can:Blogs content')->except('singlepost');
         $this->postRepository = $postRepo;
         $this->categories = $categoriesRepo;
 
