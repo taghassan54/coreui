@@ -40,9 +40,11 @@
             <div class="second-col col-md-6">
                 <div class="carousel slide slides" role="listbox" data-pause="true" data-keyboard="false" data-ride="carousel" data-interval="5000">
                     <ol class="carousel-indicators">
-                        <li data-slide-to="0" class="active"></li>
-                        <li data-slide-to="1"></li>
-                        <li data-slide-to="2"></li>
+                        @forelse ($event->getMedia() as $media)
+                        <li data-slide-to="{{$loop->iteration-1}}" class=" {{ $loop->first?'active':'' }}"></li>
+                        @empty
+
+                        @endforelse
 
 
 

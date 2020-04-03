@@ -18,7 +18,7 @@ class EventController extends AppBaseController
     public function __construct(EventRepository $eventRepo)
     {
         $this->eventRepository = $eventRepo;
-        $this->middleware('can:Events content');
+        $this->middleware('can:Events content')->except('single_event');
     }
 
     /**

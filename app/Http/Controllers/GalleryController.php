@@ -132,7 +132,7 @@ class GalleryController extends AppBaseController
 
             return redirect(route('galleries.index'));
         }
-        if($gallery->type=='img')
+      
         if($request->hasFile('file')){
             foreach ($gallery->getMedia() as $media) {
                 $media->delete();

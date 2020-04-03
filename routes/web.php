@@ -127,6 +127,7 @@ Route::resource('frequentlyAskedQuestions', 'FrequentlyAskedQuestionController')
 Route::resource('memberships', 'MembershipController');
 
 Route::resource('news', 'NewsController');
+Route::post('delete-media', 'MediaController@destroy');
 
 Route::resource('users', 'UserController')->middleware('auth');
 
