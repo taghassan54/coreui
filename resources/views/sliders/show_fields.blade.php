@@ -29,7 +29,7 @@
     <input type="hidden" name="model" value="Slider">
     <input type="hidden" name="model_id" value="{{ $slider->id }}">
     <input type="hidden" name="media_id" value="{{ $media->id }}">
-    <button type="submit" class="btn btn-danger">Delete</button>
+    <button type="submit" onclick="return  confirm('Want to delete ?!')" class="btn btn-danger">Delete</button>
 </form>
 
     @empty
