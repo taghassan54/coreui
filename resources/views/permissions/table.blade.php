@@ -2,7 +2,7 @@
     <table class="table table-striped" id="permissions-table">
         <thead>
             <th>Name</th>
-       
+
             {{--  <th colspan="3">Action</th>  --}}
         </thead>
         <tbody>
